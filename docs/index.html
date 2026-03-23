@@ -537,6 +537,18 @@
             el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
             observer.observe(el);
         });
+
+        // If demo assets were not added yet (e.g. moodflow-demo.gif), show a clear fallback.
+        const demoImg = document.querySelector('.demo-gif img');
+        if (demoImg) {
+            demoImg.addEventListener('error', () => {
+                demoImg.style.display = 'none';
+                const msg = document.createElement('p');
+                msg.className = 'text-sage-600 font-light';
+                msg.textContent = 'Demo GIF not found yet. Add `docs/assets/moodflow-demo.gif` to enable the animation.';
+                demoImg.parentElement.appendChild(msg);
+            });
+        }
     </script>
 </body>
 </html>

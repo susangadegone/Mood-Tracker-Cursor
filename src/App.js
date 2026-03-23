@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { isUserOnboarded } from './utils/storage';
+import { HashRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
+import { isUserAuthenticated, isUserOnboarded } from './utils/storage';
 import Layout from './components/Layout';
+import Splash from './pages/Splash';
+import Login from './pages/Login';
 import Onboarding from './pages/Onboarding';
 import Home from './pages/Home';
 import Track from './pages/Track';
@@ -12,22 +14,24 @@ import Journal from './pages/Journal';
 import Activities from './pages/Activities';
 
 function App() {
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
   const [userOnboarded, setUserOnboarded] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Check onboarding status on mount and when storage changes
-    const checkOnboardingStatus = () => {
+    // Check auth and onboarding status
+    const checkAuthStatus = () => {
+      setUserAuthenticated(isUserAuthenticated());
       setUserOnboarded(isUserOnboarded());
       setIsLoading(false);
     };
 
-    checkOnboardingStatus();
+    checkAuthStatus();
 
-    // Listen for storage changes (when user completes onboarding)
+    // Listen for storage changes
     const handleStorageChange = (e) => {
-      if (e.key === 'moodflow_user_data') {
-        checkOnboardingStatus();
+      if (e.key === 'moodflow_auth' || e.key === 'moodflow_user_data') {
+        checkAuthStatus();
       }
     };
 
@@ -35,7 +39,7 @@ function App() {
     
     // Also listen for custom events for same-tab updates
     const handleUserDataUpdate = () => {
-      checkOnboardingStatus();
+      checkAuthStatus();
     };
 
     window.addEventListener('userDataUpdated', handleUserDataUpdate);
@@ -59,44 +63,93 @@ function App() {
   }
 
   return (
-    <Router basename="/Mood-Tracker-Cursor">
+    <Router>
       <Layout>
         <Routes>
-          <Route 
-            path="/onboarding" 
-            element={userOnboarded ? <Navigate to="/" replace /> : <Onboarding />} 
-          />
+          {/* Splash Route - Always Entry Point */}
           <Route 
             path="/" 
-            element={userOnboarded ? <Home /> : <Navigate to="/onboarding" replace />} 
+            element={<Splash />} 
+          />
+          
+          {/* Login Route */}
+          <Route 
+            path="/login" 
+            element={userAuthenticated ? <Navigate to={userOnboarded ? "/home" : "/onboarding"} replace /> : <Login />} 
+          />
+          
+          {/* Onboarding Route */}
+          <Route 
+            path="/onboarding" 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              userOnboarded ? <Navigate to="/home" replace /> : 
+              <Onboarding />
+            } 
+          />
+          
+          {/* Home Route */}
+          <Route 
+            path="/home" 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Home />
+            } 
           />
           <Route 
             path="/track" 
-            element={userOnboarded ? <Track /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Track />
+            } 
           />
           <Route 
             path="/sanctuary" 
-            element={userOnboarded ? <Sanctuary /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Sanctuary />
+            } 
           />
           <Route 
             path="/insights" 
-            element={userOnboarded ? <Insights /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Insights />
+            } 
           />
           <Route 
             path="/support" 
-            element={userOnboarded ? <Support /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Support />
+            } 
           />
           <Route 
             path="/journal" 
-            element={userOnboarded ? <Journal /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Journal />
+            } 
           />
           <Route 
             path="/activities" 
-            element={userOnboarded ? <Activities /> : <Navigate to="/onboarding" replace />} 
+            element={
+              !userAuthenticated ? <Navigate to="/login" replace /> :
+              !userOnboarded ? <Navigate to="/onboarding" replace /> : 
+              <Activities />
+            } 
           />
+          
+          {/* Catch All */}
           <Route 
             path="*" 
-            element={<Navigate to={userOnboarded ? "/" : "/onboarding"} replace />} 
+            element={<Navigate to="/" replace />} 
           />
         </Routes>
       </Layout>
