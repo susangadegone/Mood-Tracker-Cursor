@@ -59,7 +59,7 @@ function App() {
   }
 
   return (
-    <Router>
+    <Router basename="/Mood-Tracker-Cursor">
       <Layout>
         <Routes>
           <Route 
