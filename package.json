@@ -2,7 +2,7 @@
   "name": "moodflow",
   "version": "1.0.0",
   "private": true,
-  "homepage": "https://jaxxat1300.github.io/Mood-Tracker-Cursor",
+  "homepage": "https://susangadegone.github.io/Mood-Tracker-Cursor",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

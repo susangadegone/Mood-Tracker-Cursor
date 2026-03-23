@@ -69,8 +69,8 @@ npm run build
 
 ## 🌐 Live Demo & Project Website
 
-### 🚀 **Live Demo**: [Try MoodFlow Now!](https://jaxxat1300.github.io/Mood-Tracker-Cursor)
-### 📖 **Project Website**: [Visit Project Page](https://jaxxat1300.github.io/Mood-Tracker-Cursor/docs)
+### 🚀 **Live Demo**: [Try MoodFlow Now!](https://susangadegone.github.io/Mood-Tracker-Cursor)
+### 📖 **Project Website**: [Visit Project Page](https://susangadegone.github.io/Mood-Tracker-Cursor/docs)
 
 ## 🎬 Demo & Screenshots
 

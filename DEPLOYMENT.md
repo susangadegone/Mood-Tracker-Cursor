@@ -2,7 +2,7 @@
 
 ## 🌐 Live Deployment (GitHub Pages)
 
-**Primary URL:** https://jaxxat1300.github.io/Mood-Tracker-Cursor/
+**Primary URL:** https://susangadegone.github.io/Mood-Tracker-Cursor/
 
 ## 🚀 How to Deploy Updates
 
