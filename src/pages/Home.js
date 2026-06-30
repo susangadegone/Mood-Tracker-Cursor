@@ -87,16 +87,18 @@ const Home = () => {
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
       {/* Decorative Background Elements */}
       
-      <div className="max-w-2xl mx-auto space-y-8 relative z-10">
+      <div className="max-w-2xl mx-auto space-y-6 relative z-10">
         {/* Welcome Header */}
-        <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
-            <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
+        <div className="flex items-center gap-3 fade-in">
+          <div className="flex-shrink-0 w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center">
+            <Leaf className="w-5 h-5 text-white" strokeWidth={2} />
           </div>
-          <h1 className="text-5xl font-bold text-sage-900 mb-3 tracking-tight">
-            {getGreeting()}{userData?.name && userData.name !== 'Friend' ? `, ${userData.name}` : ''}
-          </h1>
-          <p className="text-xl text-sage-600 font-light">How are you feeling today?</p>
+          <div>
+            <h1 className="text-2xl font-bold text-sage-900 tracking-tight">
+              {getGreeting()}{userData?.name && userData.name !== 'Friend' ? `, ${userData.name}` : ''}
+            </h1>
+            <p className="text-sm text-sage-600">How are you feeling today?</p>
+          </div>
         </div>
 
         {/* Crisis Resources - Elegant Banner */}

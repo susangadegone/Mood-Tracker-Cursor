@@ -95,17 +95,21 @@ const Support = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      <div className="max-w-3xl mx-auto space-y-8 relative z-10">
+      <div className="max-w-3xl mx-auto space-y-6 relative z-10">
         {/* Header with Quick Exit */}
-        <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
-            <Heart className="w-10 h-10 text-white" strokeWidth={1.5} />
+        <div className="flex items-start justify-between gap-3 fade-in">
+          <div className="flex items-center gap-3">
+            <div className="flex-shrink-0 w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center">
+              <Heart className="w-5 h-5 text-white" strokeWidth={2} />
+            </div>
+            <div>
+              <h1 className="text-2xl font-bold text-sage-900 tracking-tight">Support & Resources</h1>
+              <p className="text-sm text-sage-600">You're not alone</p>
+            </div>
           </div>
-          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Support & Resources</h1>
-          <p className="text-xl text-sage-600 font-light mb-4">You're not alone</p>
           <button
             onClick={() => setShowQuickExit(true)}
-            className="px-6 py-2 bg-white hover:bg-sage-50 text-sage-700 text-sm font-semibold rounded-spa border-2 border-sage-300 transition-all duration-300 shadow-spa"
+            className="flex-shrink-0 px-4 py-2 bg-white hover:bg-sage-50 text-sage-700 text-sm font-semibold rounded-spa border-2 border-sage-300 transition-all duration-300 shadow-spa"
           >
             Quick Exit
           </button>
