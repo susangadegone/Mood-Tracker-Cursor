@@ -125,11 +125,11 @@ export const getMediaLibrary = () => {
   return data ? JSON.parse(data) : {
     videos: [],
     categories: [
-      { id: 'focus', name: 'Focus & Productivity', icon: '🎵' },
-      { id: 'meditation', name: 'Meditation & Calm', icon: '🧘' },
-      { id: 'comfort', name: 'Comfort Content', icon: '😌' },
-      { id: 'motivation', name: 'Motivation', icon: '💪' },
-      { id: 'sleep', name: 'Sleep Sounds', icon: '😴' },
+      { id: 'focus', name: 'Focus & Productivity' },
+      { id: 'meditation', name: 'Meditation & Calm' },
+      { id: 'comfort', name: 'Comfort Content' },
+      { id: 'motivation', name: 'Motivation' },
+      { id: 'sleep', name: 'Sleep Sounds' },
     ]
   };
 };

@@ -115,7 +115,7 @@ const Insights = () => {
             <TrendingUp className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
           <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Insights</h1>
-          <p className="text-xl text-sage-600 font-light">Discover patterns in your emotional journey</p>
+          <p className="text-xl text-sage-600 font-light">Your mood patterns over time</p>
         </div>
 
         {/* Time Range Filter */}

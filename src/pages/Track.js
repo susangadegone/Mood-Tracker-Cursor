@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { saveMoodEntry } from '../utils/storage';
-import { Check, Phone, Heart, Sparkles } from 'lucide-react';
+import { Check, Phone, Heart, Edit3, Briefcase, Users, HeartHandshake, Activity, BookOpen, Home as HomeIcon, DollarSign, Target } from 'lucide-react';
 
 const Track = () => {
   const navigate = useNavigate();
@@ -39,14 +39,14 @@ const Track = () => {
   };
 
   const contextTags = [
-    { id: 'work', label: 'Work', icon: '🏢' },
-    { id: 'social', label: 'Social', icon: '👥' },
-    { id: 'relationship', label: 'Relationship', icon: '❤️' },
-    { id: 'health', label: 'Health', icon: '💪' },
-    { id: 'study', label: 'Study', icon: '📚' },
-    { id: 'home', label: 'Home', icon: '🏠' },
-    { id: 'financial', label: 'Financial', icon: '💰' },
-    { id: 'personal', label: 'Personal', icon: '🎯' },
+    { id: 'work', label: 'Work', Icon: Briefcase },
+    { id: 'social', label: 'Social', Icon: Users },
+    { id: 'relationship', label: 'Relationship', Icon: HeartHandshake },
+    { id: 'health', label: 'Health', Icon: Activity },
+    { id: 'study', label: 'Study', Icon: BookOpen },
+    { id: 'home', label: 'Home', Icon: HomeIcon },
+    { id: 'financial', label: 'Financial', Icon: DollarSign },
+    { id: 'personal', label: 'Personal', Icon: Target },
   ];
 
   const handleSave = () => {
@@ -103,7 +103,7 @@ const Track = () => {
         {/* Header */}
         <div className="text-center fade-in">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-mint-500 to-primary-500 rounded-full shadow-spa-xl mb-6 float">
-            <Sparkles className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Edit3 className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
           <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Track Your Mood</h1>
           <p className="text-xl text-sage-600 font-light">How are you feeling right now?</p>
@@ -115,8 +115,8 @@ const Track = () => {
             <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-lg mb-4">
               <Check className="w-8 h-8 text-white" strokeWidth={2.5} />
             </div>
-            <h3 className="font-serif text-2xl font-semibold text-sage-900 mb-2">Mood Logged!</h3>
-            <p className="text-sage-600">Your feelings are valid and important</p>
+            <h3 className="font-serif text-2xl font-semibold text-sage-900 mb-2">Mood logged</h3>
+            <p className="text-sage-600">Your entry has been saved.</p>
           </div>
         )}
 
@@ -305,7 +305,7 @@ const Track = () => {
                       : 'bg-white border border-border text-text-primary hover:border-accent-600 disabled:opacity-50 disabled:cursor-not-allowed'
                   }`}
                 >
-                  <span>{tag.icon}</span>
+                  <tag.Icon size={16} />
                   <span className="text-sm">{tag.label}</span>
                 </button>
               ))}

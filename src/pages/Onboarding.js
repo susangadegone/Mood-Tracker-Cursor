@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { saveUserData } from '../utils/storage';
-import { Sparkles, Leaf, Bell } from 'lucide-react';
+import { Leaf, Bell, TrendingUp, Heart, Lock, Edit3, Music } from 'lucide-react';
 
 const Onboarding = () => {
   const navigate = useNavigate();
@@ -90,13 +90,13 @@ const Onboarding = () => {
               
               <div>
                 <h1 className="text-5xl font-serif font-bold text-sage-900 mb-4 tracking-tight">
-                  Welcome to Your
+                  Welcome to
                   <span className="block bg-gradient-to-r from-primary-600 to-mint-600 bg-clip-text text-transparent">
-                    Wellness Journey
+                    MoodFlow
                   </span>
                 </h1>
                 <p className="text-xl text-sage-600 font-light max-w-md mx-auto leading-relaxed">
-                  A peaceful space for emotional clarity and mindful growth
+                  A simple, private space to track how you feel
                 </p>
               </div>
             </div>
@@ -106,33 +106,28 @@ const Onboarding = () => {
               <div className="space-y-6">
                 <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-primary-50 to-mint-50 rounded-spa">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
-                    <Sparkles className="w-5 h-5 text-white" />
+                    <Lock className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-semibold text-sage-900 mb-1">Your Safe Haven</h3>
+                    <h3 className="font-semibold text-sage-900 mb-1">Private by design</h3>
                     <p className="text-sm text-sage-600 leading-relaxed">
-                      This is your private sanctuary to explore emotions, track patterns, and find peace in your journey
+                      Everything you log stays on your device. No account, no servers.
                     </p>
                   </div>
                 </div>
 
                 <div className="grid grid-cols-2 gap-4">
-                  <div className="text-center p-4 bg-white rounded-spa border border-sage-100">
-                    <div className="text-3xl mb-2">🌿</div>
-                    <p className="text-xs text-sage-600 font-medium">Calm & Mindful</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-spa border border-sage-100">
-                    <div className="text-3xl mb-2">🦋</div>
-                    <p className="text-xs text-sage-600 font-medium">Growth Focused</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-spa border border-sage-100">
-                    <div className="text-3xl mb-2">💚</div>
-                    <p className="text-xs text-sage-600 font-medium">Always Here</p>
-                  </div>
-                  <div className="text-center p-4 bg-white rounded-spa border border-sage-100">
-                    <div className="text-3xl mb-2">✨</div>
-                    <p className="text-xs text-sage-600 font-medium">Just for You</p>
-                  </div>
+                  {[
+                    { Icon: Edit3, label: 'Daily check-ins' },
+                    { Icon: TrendingUp, label: 'Mood patterns' },
+                    { Icon: Heart, label: 'Crisis support' },
+                    { Icon: Lock, label: 'Private & local' },
+                  ].map(({ Icon, label }) => (
+                    <div key={label} className="text-center p-4 bg-white rounded-spa border border-sage-100">
+                      <Icon className="w-6 h-6 text-primary-600 mx-auto mb-2" strokeWidth={1.5} />
+                      <p className="text-xs text-sage-600 font-medium">{label}</p>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
@@ -144,47 +139,47 @@ const Onboarding = () => {
           <div className="space-y-8 slide-up">
             <div className="text-center space-y-4">
               <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-mint-400 to-primary-400 rounded-full shadow-spa-lg mb-4">
-                <Sparkles className="w-10 h-10 text-white" strokeWidth={1.5} />
+                <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
               </div>
               <h2 className="text-4xl font-serif font-bold text-sage-900 tracking-tight">
-                What We Offer You
+                What you can do
               </h2>
               <p className="text-lg text-sage-600 max-w-md mx-auto">
-                Tools and insights designed for your emotional wellbeing
+                A few simple tools for keeping track of how you feel
               </p>
             </div>
 
             <div className="space-y-4">
               {[
                 {
-                  icon: '🌸',
-                  title: 'Track Your Emotions',
-                  description: 'Log feelings with depth and context, understanding the full spectrum of your emotional experience'
+                  Icon: Edit3,
+                  title: 'Track your emotions',
+                  description: 'Log how you feel with intensity and a bit of context.'
                 },
                 {
-                  icon: '📊',
-                  title: 'Discover Patterns',
-                  description: 'Visualize your emotional journey over time and gain insights into what influences your wellbeing'
+                  Icon: TrendingUp,
+                  title: 'Spot patterns',
+                  description: 'See how your mood changes over days and weeks.'
                 },
                 {
-                  icon: '🎵',
-                  title: 'Find Your Peace',
-                  description: 'Access calming content and wellness activities whenever you need a moment of tranquility'
+                  Icon: Music,
+                  title: 'Wind down',
+                  description: 'Save calming videos and run a quick breathing exercise.'
                 },
                 {
-                  icon: '💚',
-                  title: 'Get Support',
-                  description: 'Connect with mental health resources and crisis support available 24/7'
+                  Icon: Heart,
+                  title: 'Get support',
+                  description: 'Crisis lines and resources, always one tap away.'
                 }
               ].map((item, index) => (
-                <div 
+                <div
                   key={index}
                   className="card group hover:border-primary-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-100 to-mint-100 rounded-spa flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">
-                      {item.icon}
+                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-100 to-mint-100 rounded-spa flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                      <item.Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
                     </div>
                     <div className="flex-1">
                       <h3 className="font-semibold text-sage-900 mb-2">{item.title}</h3>
@@ -205,10 +200,10 @@ const Onboarding = () => {
                 <Bell className="w-10 h-10 text-white" strokeWidth={1.5} />
               </div>
               <h2 className="text-4xl font-serif font-bold text-sage-900 tracking-tight">
-                Personalize Your Experience
+                Set things up
               </h2>
               <p className="text-lg text-sage-600 max-w-md mx-auto">
-                Let's tailor this space to support you best
+                A couple of optional preferences
               </p>
             </div>
 
@@ -226,7 +221,7 @@ const Onboarding = () => {
                     className="input-field"
                     placeholder="Your name or nickname"
                   />
-                  <p className="text-xs text-sage-500 mt-2">We'll use this to make your experience more personal</p>
+                  <p className="text-xs text-sage-500 mt-2">Only used to greet you. You can leave it blank.</p>
                 </div>
 
                 {/* Notifications Toggle */}
@@ -237,7 +232,7 @@ const Onboarding = () => {
                         <Bell className="w-5 h-5 text-primary-600" />
                         <h3 className="font-semibold text-sage-900">Daily Check-in Reminders</h3>
                       </div>
-                      <p className="text-sm text-sage-600">Gentle nudges to reflect on your day</p>
+                      <p className="text-sm text-sage-600">A daily reminder to check in</p>
                     </div>
                     <label className="relative inline-flex items-center cursor-pointer ml-4">
                       <input
@@ -268,7 +263,7 @@ const Onboarding = () => {
 
                 <div className="p-4 bg-sage-50 rounded-spa border border-sage-200">
                   <p className="text-sm text-sage-700 text-center">
-                    <span className="font-medium">🌿 Privacy First:</span> All your data stays private and is stored only on your device
+                    <span className="font-medium">Privacy first:</span> all your data is stored only on your device
                   </p>
                 </div>
               </div>
@@ -280,10 +275,9 @@ const Onboarding = () => {
         <div className="mt-12 space-y-4">
           <button
             onClick={handleNext}
-            className="w-full btn-primary text-lg group"
+            className="w-full btn-primary text-lg"
           >
-            <span>{step === 3 ? 'Begin Your Journey' : step === 1 ? 'Get Started' : 'Continue'}</span>
-            <span className="inline-block ml-2 transition-transform group-hover:translate-x-1">→</span>
+            <span>{step === 3 ? 'Finish' : step === 1 ? 'Get started' : 'Continue'}</span>
           </button>
           
           <button

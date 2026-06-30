@@ -198,7 +198,7 @@ const Profile = () => {
 
         {/* Tips */}
         <div className="bg-primary-50 border border-primary-200 rounded-xl p-4">
-          <h3 className="font-medium text-primary-800 mb-2">💡 Tips</h3>
+          <h3 className="font-medium text-primary-800 mb-2">Tips</h3>
           <ul className="text-sm text-primary-700 space-y-1">
             <li>• Be specific: "10-minute walk" vs "exercise"</li>
             <li>• Include quick wins: "Deep breathing for 2 minutes"</li>
@@ -209,7 +209,7 @@ const Profile = () => {
 
         {/* Reset App Button for Testing */}
         <div className="mt-6 p-4 bg-red-50 border border-red-200 rounded-xl">
-          <h3 className="font-medium text-red-800 mb-3">🔄 Testing & Development</h3>
+          <h3 className="font-medium text-red-800 mb-3">Testing & Development</h3>
           <p className="text-sm text-red-700 mb-4">
             Use this button to reset the app and clear all stored data. This will take you back to the onboarding screen.
           </p>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { getUserData, getMoodEntries } from '../utils/storage';
-import { Edit3, TrendingUp, Music, Heart, Calendar, Flame, AlertCircle, Phone, Sparkles } from 'lucide-react';
+import { Edit3, TrendingUp, Music, Heart, Calendar, Flame, AlertCircle, Phone, Leaf, Check } from 'lucide-react';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -93,12 +93,12 @@ const Home = () => {
         {/* Welcome Header */}
         <div className="text-center fade-in">
           <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
-            <Sparkles className="w-10 h-10 text-white" strokeWidth={1.5} />
+            <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
           <h1 className="text-5xl font-serif font-bold text-sage-900 mb-3 tracking-tight">
             {getGreeting()}{userData?.name && userData.name !== 'Friend' ? `, ${userData.name}` : ''}
           </h1>
-          <p className="text-xl text-sage-600 font-light">How is your heart today?</p>
+          <p className="text-xl text-sage-600 font-light">How are you feeling today?</p>
         </div>
 
         {/* Crisis Resources - Elegant Banner */}
@@ -142,7 +142,7 @@ const Home = () => {
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
                 <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full flex items-center justify-center shadow-spa">
-                  <span className="text-2xl">✓</span>
+                  <Check className="w-7 h-7 text-white" strokeWidth={2.5} />
                 </div>
                 <div>
                   <h3 className="font-semibold text-sage-900 mb-1">Today's mood logged</h3>
@@ -164,7 +164,7 @@ const Home = () => {
                 <Edit3 className="w-8 h-8 text-primary-600" strokeWidth={1.5} />
               </div>
               <h3 className="font-serif text-2xl font-semibold text-sage-900 mb-2">Ready to check in?</h3>
-              <p className="text-sage-600 mb-6">Take a moment to reflect on your emotions</p>
+              <p className="text-sage-600 mb-6">Log how you're feeling right now</p>
               <button
                 onClick={() => navigate('/track')}
                 className="btn-primary"
@@ -195,7 +195,7 @@ const Home = () => {
 
         {/* Quick Actions */}
         <div>
-          <h2 className="text-2xl font-serif font-bold text-sage-900 mb-6 text-center">Your Wellness Tools</h2>
+          <h2 className="text-2xl font-serif font-bold text-sage-900 mb-6 text-center">Quick actions</h2>
           <div className="grid grid-cols-2 gap-4">
             {quickActions.map((action, index) => {
               const Icon = action.icon;
@@ -226,7 +226,7 @@ const Home = () => {
                 onClick={() => navigate('/insights')}
                 className="text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors"
               >
-                View All →
+                View all
               </button>
             </div>
             <div className="space-y-3">
@@ -259,17 +259,6 @@ const Home = () => {
             </div>
           </div>
         )}
-
-        {/* Motivational Quote */}
-        <div className="card bg-gradient-to-br from-primary-50 to-mint-50 border-primary-200 text-center">
-          <div className="inline-flex items-center justify-center w-10 h-10 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa mb-4">
-            <Heart className="w-5 h-5 text-white" />
-          </div>
-          <p className="text-lg text-sage-800 italic mb-3 font-light leading-relaxed">
-            "Your feelings are valid. Taking time to understand them is a strength, not a weakness."
-          </p>
-          <p className="text-sm text-sage-600 font-medium">— Your Wellness Journey</p>
-        </div>
       </div>
     </div>
   );
