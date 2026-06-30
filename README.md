@@ -1,254 +1,143 @@
-# MoodFlow - Mood Tracker App
+# MoodFlow
 
-A beautiful, mobile-friendly mood tracking web application built with React and TailwindCSS.
+A private, browser-based mood tracker. You log how you feel, MoodFlow shows you the
+patterns over time, and everything stays on your own device. No account, no server, no
+data leaving the browser.
 
-## Features
+This started as a personal project and is intentionally small. It is a self-tracking and
+self-reflection tool, not a clinical product. It does not diagnose anything, it is not a
+substitute for therapy or medical care, and it does not contact anyone on your behalf. If
+you are in crisis, the resources in [CRISIS_RESOURCES.md](CRISIS_RESOURCES.md) and the
+in-app Support page list real hotlines you can reach right now.
 
-### 🌟 Core Features
-- **Onboarding Flow**: Simple signup with personalized questions
-- **Daily Mood Check-ins**: Track emotions with intuitive mood selection
-- **Dashboard**: Visual mood trends and statistics
-- **Journal**: Freeform notes with timestamps and prompts
-- **Profile**: Customizable wellness toolkit lists
-- **Activities**: Mindful activities including puzzles, breathing exercises, and guided journaling
+## What it does
 
-### 🎨 Design
-- Therapeutic color palette (calming blues, greens, lavender)
-- Mobile-first responsive design
-- Clean, modern UI with rounded corners and whitespace
-- Smooth animations and transitions
+- **Mood logging.** Record a mood with an intensity level and an optional note. Logging is
+  meant to take a few seconds so you actually do it.
+- **Insights.** Charts and summaries of your entries over time, so trends are visible
+  instead of buried in a list.
+- **Journal and Notes.** Longer freeform writing with timestamps, plus quick tagged notes
+  for things that do not need a full entry.
+- **Activities and Sanctuary.** A small set of grounding exercises (breathing, guided
+  prompts, a daily puzzle) and a space for calming audio.
+- **Support.** A dedicated page of crisis lines and mental health resources, always one tap
+  away and impossible to hide.
+- **Profile.** Editable lists of what helps you when things are hard and when things are
+  good, so your own coping strategies are written down before you need them.
 
-### 💾 Data Storage
-- Local storage for all user data (no backend required)
-- Persistent mood entries and journal entries
-- User preferences and profile data
+### Crisis support is built in, not bolted on
 
-## 🚀 Quick Start
+Difficult moods are exactly when a person is least likely to go looking for help. MoodFlow
+keeps the 988 Suicide & Crisis Lifeline and the Crisis Text Line reachable from the home
+screen and the Support page, and the mood-logging flow surfaces a gentle, dismissible
+prompt when someone logs a high-intensity unpleasant emotion. The full rationale and the
+complete resource list live in [CRISIS_RESOURCES.md](CRISIS_RESOURCES.md).
 
-### For Users (Try the App)
-1. **Clone this repository:**
-   ```bash
-   git clone https://github.com/YOUR_USERNAME/moodflow.git
-   cd moodflow
-   ```
+## Privacy model
 
-2. **Install dependencies:**
-   ```bash
-   npm install
-   ```
+All data is stored in the browser's `localStorage`. Concretely:
 
-3. **Start the app:**
-   ```bash
-   npm start
-   ```
+- Nothing is transmitted to a backend, because there isn't one.
+- Your entries live only in the browser profile you used to create them. Clearing site
+  data, switching browsers, or switching devices means starting fresh.
+- There is no cloud sync and no backup. If that matters to you, export support is a good
+  first contribution (see below).
 
-4. **Open your browser:** Visit [http://localhost:3000](http://localhost:3000)
+This is a deliberate trade-off: maximum privacy and zero infrastructure, at the cost of
+portability. For a mental health tool I consider that the right default.
 
-### For Developers
+## Tech stack
 
-#### Prerequisites
-- Node.js (v14 or higher)
-- npm or yarn
-- Git
+- **React 18** (Create React App / `react-scripts`)
+- **React Router 6** using `HashRouter`, so client-side routes work on static hosts like
+  GitHub Pages
+- **Tailwind CSS 3** for styling
+- **Recharts** for the mood charts
+- **lucide-react** for icons
 
-#### Local Development
+## Getting started
+
+Requires Node.js 14 or newer and npm.
+
 ```bash
-# Clone the repository
-git clone https://github.com/YOUR_USERNAME/moodflow.git
-cd moodflow
-
-# Install dependencies
+git clone https://github.com/susangadegone/Mood-Tracker-Cursor.git
+cd Mood-Tracker-Cursor
 npm install
-
-# Start development server
 npm start
-
-# Build for production
-npm run build
 ```
 
-## 🌐 Live Demo & Project Website
+The dev server runs at [http://localhost:3000](http://localhost:3000) and reloads on save.
 
-### 🚀 **Live Demo**: [Try MoodFlow Now!](https://susangadegone.github.io/Mood-Tracker-Cursor)
-### 📖 **Project Website**: [Visit Project Page](https://susangadegone.github.io/Mood-Tracker-Cursor/docs)
+### Available scripts
 
-## 🎬 Demo & Screenshots
+| Command | Description |
+| --- | --- |
+| `npm start` | Run the development server |
+| `npm run build` | Produce an optimized production build in `build/` |
+| `npm test` | Run the test runner in watch mode |
+| `npm run deploy` | Build and publish `build/` to GitHub Pages via `gh-pages` |
 
-![MoodFlow Demo](docs/assets/moodflow-demo.gif)
+## Deployment
 
-*Complete demo showing onboarding, mood tracking, journaling, and activities*
+The app is a static bundle, so any static host works. `npm run build` outputs to `build/`;
+serve that directory as-is.
 
-## 🌐 Deployment Options
+This repo is configured for GitHub Pages. `homepage` in `package.json` points at the Pages
+URL, the router uses `HashRouter` so deep links resolve without server-side rewrites, and
+`npm run deploy` pushes the build to the `gh-pages` branch. For Netlify or Vercel, use a
+build command of `npm run build` and a publish directory of `build`. See
+[DEPLOYMENT.md](DEPLOYMENT.md) for details.
 
-### Deploy Your Own Instance
-
-#### Option 1: Netlify (Recommended)
-1. Fork this repository
-2. Connect your GitHub account to [Netlify](https://netlify.com)
-3. Create new site from Git
-4. Select your forked repository
-5. Build settings:
-   - Build command: `npm run build`
-   - Publish directory: `build`
-6. Deploy!
-
-#### Option 2: Vercel
-1. Fork this repository
-2. Visit [Vercel](https://vercel.com)
-3. Import your GitHub repository
-4. Deploy with default settings
-
-#### Option 3: GitHub Pages
-1. Fork this repository
-2. Go to Settings → Pages
-3. Enable GitHub Actions for deployment
-4. Push changes to trigger deployment
-
-### Manual Deployment
-```bash
-# Build the project
-npm run build
-
-# Deploy the 'build' folder to any static hosting service
-```
-
-## Project Structure
+## Project structure
 
 ```
 src/
-├── components/          # Reusable UI components
-│   ├── Layout.js       # Main layout wrapper
-│   └── BottomNavigation.js
-├── pages/              # Main application pages
-│   ├── Onboarding.js   # User signup and initial questions
-│   ├── Home.js         # Dashboard with mood check-ins
-│   ├── Journal.js      # Notes and journal entries
-│   ├── Activities.js   # Mindful activities
-│   └── Profile.js      # User profile and wellness lists
-├── utils/              # Utility functions
-│   └── storage.js      # Local storage management
-├── App.js              # Main app component with routing
-├── index.js            # App entry point
-└── index.css           # Global styles and Tailwind imports
+├── components/
+│   ├── Layout.js            # Page shell
+│   └── BottomNavigation.js  # Primary navigation
+├── pages/
+│   ├── Onboarding.js        # First-run setup
+│   ├── Home.js              # Landing / dashboard
+│   ├── Track.js             # Mood logging
+│   ├── Insights.js          # Trends and charts
+│   ├── Journal.js           # Long-form entries
+│   ├── Notes.js             # Quick tagged notes
+│   ├── Activities.js        # Grounding exercises
+│   ├── Sanctuary.js         # Calming audio space
+│   ├── Support.js           # Crisis resources
+│   └── Profile.js           # Coping-strategy lists
+├── utils/
+│   └── storage.js           # localStorage read/write
+├── App.js                   # Routing
+├── index.js                 # Entry point
+└── index.css                # Tailwind layers and globals
 ```
-
-## Key Technologies
-
-- **React 18** - Modern React with hooks
-- **React Router** - Client-side routing
-- **TailwindCSS** - Utility-first CSS framework
-- **Lucide React** - Beautiful icon library
-- **Recharts** - Charts for mood visualization
-- **Local Storage** - Data persistence
-
-## Features in Detail
-
-### Mood Tracking
-- 6 mood categories: Happy, Calm, Stressed, Sad, Angry, Excited
-- Visual mood selection with emojis and colors
-- Historical mood trends with charts
-- Daily check-in reminders
-
-### Journal System
-- Freeform text entries with titles
-- Timestamp tracking
-- Entry management (create, delete)
-- Guided journal prompts
-
-### Profile Management
-- Editable lists for "What helps when I feel bad/good"
-- User information display
-- Wellness toolkit customization
-
-### Activities
-- **Daily Puzzle**: Brain teasers and riddles
-- **Guided Journal**: Thoughtful writing prompts
-- **Breathing Exercise**: 4-4-4 breathing technique with visual guide
-
-## Customization
-
-The app uses a custom TailwindCSS configuration with therapeutic colors:
-- Primary: Calming blues
-- Secondary: Soothing greens  
-- Accent: Gentle purples
-- Mood colors: Specific colors for each emotion
-
-## Browser Support
-
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
 
 ## Contributing
 
-This is a starter project. Feel free to:
-- Add new mood categories
-- Implement additional activities
-- Enhance the UI/UX
-- Add data export features
-- Integrate with external APIs
+Contributions are welcome. The most useful things this project is missing, roughly in
+order:
+
+1. **Data export/import** (JSON or CSV). The biggest gap given the local-only storage
+   model — it gives people a way to back up and move their data.
+2. **Tests around `storage.js`** and the mood-logging flow, since that's the core data path.
+3. **Accessibility**: keyboard navigation, focus management, and color-contrast checks.
+4. **Optional reminders** for check-ins.
+
+To contribute:
+
+```bash
+git checkout -b feature/your-change
+# make changes
+npm test
+git commit -m "Describe your change"
+git push origin feature/your-change
+```
+
+Then open a pull request describing what changed and why. For anything touching the crisis
+or support flows, please be conservative and explain the reasoning — those paths matter
+more than the rest of the app.
 
 ## License
 
-This project is open source and available under the MIT License.
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-### Ways to Contribute
-- 🐛 **Report bugs** - Open an issue with details
-- 💡 **Suggest features** - Share your ideas for improvements
-- 🔧 **Submit pull requests** - Fix bugs or add features
-- 📖 **Improve documentation** - Help others understand the project
-- 🎨 **Design improvements** - Enhance UI/UX
-
-### Development Workflow
-1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Make your changes
-4. Test thoroughly
-5. Commit: `git commit -m 'Add amazing feature'`
-6. Push: `git push origin feature/amazing-feature`
-7. Open a Pull Request
-
-### Ideas for Contributions
-- 📊 **Data Export** - Export mood data as CSV/JSON
-- 🔔 **Reminders** - Daily check-in notifications
-- 🎯 **Goals** - Set and track wellness goals
-- 🌙 **Dark Mode** - Theme switching
-- 📱 **PWA Features** - Offline support, app installation
-- 🔒 **Data Sync** - Cloud backup options
-- 🎨 **Themes** - Additional color schemes
-- 📈 **Analytics** - Advanced mood insights
-- 🧘 **More Activities** - Meditation, gratitude exercises
-- 🌍 **Internationalization** - Multi-language support
-
-## 📄 License
-
-This project is open source and available under the [MIT License](LICENSE).
-
-## 🙏 Acknowledgments
-
-- Built with ❤️ for mental health awareness
-- Icons by [Lucide](https://lucide.dev/)
-- Charts by [Recharts](https://recharts.org/)
-- Styling by [TailwindCSS](https://tailwindcss.com/)
-
-## 📞 Support
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/YOUR_USERNAME/moodflow/issues)
-- 💬 **Discussions**: [GitHub Discussions](https://github.com/YOUR_USERNAME/moodflow/discussions)
-- 📧 **Email**: your-email@example.com
-
-## 🔄 Updates
-
-Stay updated with the latest features:
-- ⭐ **Star this repository** to show support
-- 👀 **Watch** for notifications about updates
-- 🍴 **Fork** to create your own version
-
----
-
-**MoodFlow** - Your personal mood tracking companion 💙
+MIT. See [LICENSE](LICENSE).
