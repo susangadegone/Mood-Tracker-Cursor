@@ -95,14 +95,16 @@ const Track = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      <div className="max-w-2xl mx-auto space-y-8 relative z-10">
+      <div className="max-w-2xl mx-auto space-y-6 relative z-10">
         {/* Header */}
-        <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
-            <Edit3 className="w-10 h-10 text-white" strokeWidth={1.5} />
+        <div className="flex items-center gap-3 fade-in">
+          <div className="flex-shrink-0 w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center">
+            <Edit3 className="w-5 h-5 text-white" strokeWidth={2} />
           </div>
-          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Track Your Mood</h1>
-          <p className="text-xl text-sage-600 font-light">How are you feeling right now?</p>
+          <div>
+            <h1 className="text-2xl font-bold text-sage-900 tracking-tight">Track Your Mood</h1>
+            <p className="text-sm text-sage-600">How are you feeling right now?</p>
+          </div>
         </div>
 
         {/* Success Message */}

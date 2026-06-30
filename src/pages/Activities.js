@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Puzzle, BookOpen, Wind, ArrowLeft, Gamepad2, Target, Zap } from 'lucide-react';
+import { Puzzle, BookOpen, Wind, ArrowLeft, Gamepad2, Target, Zap } from 'lucide-react';
 
 const Activities = () => {
   const [selectedActivity, setSelectedActivity] = useState(null);
@@ -177,14 +177,16 @@ const Activities = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      <div className="max-w-2xl mx-auto space-y-8 relative z-10">
+      <div className="max-w-2xl mx-auto space-y-6 relative z-10">
         {/* Header */}
-        <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
-            <Sparkles className="w-10 h-10 text-white" strokeWidth={1.5} />
+        <div className="flex items-center gap-3 fade-in">
+          <div className="flex-shrink-0 w-11 h-11 bg-primary-600 rounded-xl flex items-center justify-center">
+            <Puzzle className="w-5 h-5 text-white" strokeWidth={2} />
           </div>
-          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Wellness Activities</h1>
-          <p className="text-xl text-sage-600 font-light">Tools for your mindful journey</p>
+          <div>
+            <h1 className="text-2xl font-bold text-sage-900 tracking-tight">Wellness Activities</h1>
+            <p className="text-sm text-sage-600">Tools for your mindful journey</p>
+          </div>
         </div>
 
         {/* Tab Menu */}

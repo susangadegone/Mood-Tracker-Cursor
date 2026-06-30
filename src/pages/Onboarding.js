@@ -80,18 +80,15 @@ const Onboarding = () => {
           <div className="space-y-8 slide-up">
             <div className="text-center space-y-6">
               {/* Logo */}
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-primary-600 rounded-full shadow-spa-xl mb-6">
-                <Leaf className="w-12 h-12 text-white" strokeWidth={1.5} />
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-2xl mb-4">
+                <Leaf className="w-8 h-8 text-white" strokeWidth={2} />
               </div>
-              
+
               <div>
-                <h1 className="text-5xl font-bold text-sage-900 mb-4 tracking-tight">
-                  Welcome to
-                  <span className="block text-primary-600">
-                    MoodFlow
-                  </span>
+                <h1 className="text-3xl font-bold text-sage-900 mb-3 tracking-tight">
+                  Welcome to <span className="text-primary-600">MoodFlow</span>
                 </h1>
-                <p className="text-xl text-sage-600 font-light max-w-md mx-auto leading-relaxed">
+                <p className="text-base text-sage-600 max-w-md mx-auto leading-relaxed">
                   A simple, private space to track how you feel
                 </p>
               </div>
@@ -133,14 +130,11 @@ const Onboarding = () => {
         {/* Step 2: Purpose */}
         {step === 2 && (
           <div className="space-y-8 slide-up">
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-lg mb-4">
-                <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
-              </div>
-              <h2 className="text-4xl font-bold text-sage-900 tracking-tight">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-bold text-sage-900 tracking-tight">
                 What you can do
               </h2>
-              <p className="text-lg text-sage-600 max-w-md mx-auto">
+              <p className="text-base text-sage-600 max-w-md mx-auto">
                 A few simple tools for keeping track of how you feel
               </p>
             </div>
@@ -191,14 +185,11 @@ const Onboarding = () => {
         {/* Step 3: Personalization */}
         {step === 3 && (
           <div className="space-y-8 slide-up">
-            <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-lg mb-4">
-                <Bell className="w-10 h-10 text-white" strokeWidth={1.5} />
-              </div>
-              <h2 className="text-4xl font-bold text-sage-900 tracking-tight">
+            <div className="text-center space-y-2">
+              <h2 className="text-3xl font-bold text-sage-900 tracking-tight">
                 Set things up
               </h2>
-              <p className="text-lg text-sage-600 max-w-md mx-auto">
+              <p className="text-base text-sage-600 max-w-md mx-auto">
                 A couple of optional preferences
               </p>
             </div>
