@@ -80,17 +80,13 @@ const Sanctuary = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-4xl mx-auto space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <Music className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">My Sanctuary</h1>
+          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">My Sanctuary</h1>
           <p className="text-xl text-sage-600 font-light">Your personal comfort content library</p>
         </div>
 
@@ -109,7 +105,7 @@ const Sanctuary = () => {
             onClick={() => setFilterCategory('all')}
             className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
               filterCategory === 'all'
-                ? 'bg-gradient-to-r from-primary-600 to-mint-600 text-white shadow-spa'
+                ? 'bg-primary-600 text-white shadow-spa'
                 : 'bg-white border-2 border-sage-200 text-sage-600 hover:bg-sage-50'
             }`}
           >
@@ -121,7 +117,7 @@ const Sanctuary = () => {
               onClick={() => setFilterCategory(cat.id)}
               className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
                 filterCategory === cat.id
-                  ? 'bg-gradient-to-r from-primary-600 to-mint-600 text-white shadow-spa'
+                  ? 'bg-primary-600 text-white shadow-spa'
                   : 'bg-white border-2 border-sage-200 text-sage-600 hover:bg-sage-50'
               }`}
             >
@@ -155,7 +151,7 @@ const Sanctuary = () => {
                     className="w-full h-full object-cover"
                   />
                   <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-all duration-200 flex items-center justify-center">
-                    <div className="w-12 h-12 bg-accent-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
+                    <div className="w-12 h-12 bg-primary-600 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-200">
                       <Play className="w-6 h-6 text-white ml-1" />
                     </div>
                   </div>
@@ -192,7 +188,7 @@ const Sanctuary = () => {
         {/* Add Video Modal */}
         {showAddModal && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-surface rounded-modern-lg p-6 max-w-md w-full">
+            <div className="bg-surface rounded-spa-lg p-6 max-w-md w-full">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-semibold text-text-primary">Add Content</h2>
                 <button onClick={() => setShowAddModal(false)} className="text-text-secondary hover:text-text-primary">
@@ -266,7 +262,7 @@ const Sanctuary = () => {
         {/* Video Player Modal */}
         {showPlayer && selectedVideo && (
           <div className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center p-4 z-50">
-            <div className="bg-surface rounded-modern-lg p-4 max-w-4xl w-full">
+            <div className="bg-surface rounded-spa-lg p-4 max-w-4xl w-full">
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold text-text-primary">{selectedVideo.title}</h2>
                 <button 
@@ -279,7 +275,7 @@ const Sanctuary = () => {
                   <X size={24} />
                 </button>
               </div>
-              <div className="aspect-video bg-black rounded-modern overflow-hidden">
+              <div className="aspect-video bg-black rounded-spa overflow-hidden">
                 <iframe
                   width="100%"
                   height="100%"
@@ -291,7 +287,7 @@ const Sanctuary = () => {
                 ></iframe>
               </div>
               {selectedVideo.notes && (
-                <div className="mt-4 p-3 bg-gray-50 rounded-modern">
+                <div className="mt-4 p-3 bg-gray-50 rounded-spa">
                   <p className="text-sm text-text-primary">{selectedVideo.notes}</p>
                 </div>
               )}

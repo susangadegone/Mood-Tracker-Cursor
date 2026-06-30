@@ -177,27 +177,23 @@ const Activities = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-2xl mx-auto space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <Sparkles className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Wellness Activities</h1>
+          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Wellness Activities</h1>
           <p className="text-xl text-sage-600 font-light">Tools for your mindful journey</p>
         </div>
 
         {/* Tab Menu */}
-        <div className="flex gap-2 bg-white/90 backdrop-blur-sm rounded-spa-lg p-1.5 shadow-spa border border-sage-200">
+        <div className="flex gap-2 bg-white rounded-spa-lg p-1.5 shadow-spa border border-sage-200">
           <button
             onClick={() => setActiveTab('recommended')}
             className={`flex-1 py-4 px-4 rounded-spa text-sm font-semibold transition-all duration-300 ${
               activeTab === 'recommended'
-                ? 'bg-gradient-to-r from-primary-600 to-mint-600 text-white shadow-spa'
+                ? 'bg-primary-600 text-white shadow-spa'
                 : 'text-sage-600 hover:text-sage-900 hover:bg-sage-50'
             }`}
           >
@@ -207,7 +203,7 @@ const Activities = () => {
             onClick={() => setActiveTab('puzzles')}
             className={`flex-1 py-4 px-4 rounded-spa text-sm font-semibold transition-all duration-300 ${
               activeTab === 'puzzles'
-                ? 'bg-gradient-to-r from-primary-600 to-mint-600 text-white shadow-spa'
+                ? 'bg-primary-600 text-white shadow-spa'
                 : 'text-sage-600 hover:text-sage-900 hover:bg-sage-50'
             }`}
           >
@@ -245,8 +241,8 @@ const Activities = () => {
 
         {/* Context-specific tips */}
         {activeTab === 'recommended' ? (
-          <div className="card bg-gradient-to-br from-primary-50 to-mint-50 border-primary-200">
-            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">Recommended for you</h3>
+          <div className="card bg-primary-50 border-primary-200">
+            <h3 className="text-xl font-semibold text-sage-900 mb-3">Recommended for you</h3>
             <ul className="text-sm text-sage-600 space-y-2 leading-relaxed">
               <li>• These activities help reduce stress and anxiety</li>
               <li>• Practice regularly for best results</li>
@@ -255,8 +251,8 @@ const Activities = () => {
             </ul>
           </div>
         ) : (
-          <div className="card bg-gradient-to-br from-mint-50 to-primary-50 border-mint-200">
-            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">Puzzle tips</h3>
+          <div className="card bg-mint-50 border-mint-200">
+            <h3 className="text-xl font-semibold text-sage-900 mb-3">Puzzle tips</h3>
             <ul className="text-sm text-sage-600 space-y-2 leading-relaxed">
               <li>• Games help distract from anxious thoughts</li>
               <li>• Take your time - there's no rush</li>

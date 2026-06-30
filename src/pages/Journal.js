@@ -89,7 +89,7 @@ const Journal = () => {
       <div className="max-w-2xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-accent-600 rounded-modern-lg mb-4">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-spa-lg mb-4">
             <BookOpen className="w-8 h-8 text-white" />
           </div>
           <h1 className="text-2xl font-semibold text-text-primary">Journal</h1>
@@ -116,17 +116,17 @@ const Journal = () => {
 
         {/* Fun prompt modal */}
         {showPrompts && (
-          <div className="card border-accent-200 bg-accent-50">
+          <div className="card border-primary-200 bg-primary-50">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-lg font-semibold text-text-primary">Writing Prompt</h2>
               <button
                 onClick={() => getRandomPrompt()}
-                className="p-2 text-accent-600 hover:bg-accent-100 rounded-modern transition-colors"
+                className="p-2 text-primary-600 hover:bg-primary-100 rounded-spa transition-colors"
               >
                 <Shuffle size={20} />
               </button>
             </div>
-            <div className="bg-white p-4 rounded-modern mb-4">
+            <div className="bg-white p-4 rounded-spa mb-4">
               <p className="text-text-primary leading-relaxed italic">"{currentPrompt}"</p>
             </div>
             <div className="flex space-x-3">
@@ -221,7 +221,7 @@ const Journal = () => {
                   </div>
                   <button
                     onClick={() => handleDeleteEntry(entry.id)}
-                    className="p-2 text-text-secondary hover:text-danger hover:bg-red-50 rounded-modern transition-colors duration-200"
+                    className="p-2 text-text-secondary hover:text-danger hover:bg-red-50 rounded-spa transition-colors duration-200"
                   >
                     <Trash2 size={16} />
                   </button>
@@ -238,7 +238,7 @@ const Journal = () => {
         {entries.length > 0 && (
           <div className="grid grid-cols-2 gap-4">
             <div className="card text-center">
-              <div className="text-3xl font-semibold text-accent-600 mb-1">{entries.length}</div>
+              <div className="text-3xl font-semibold text-primary-600 mb-1">{entries.length}</div>
               <div className="text-sm text-text-secondary">Total Entries</div>
             </div>
             <div className="card text-center">
@@ -251,7 +251,7 @@ const Journal = () => {
         )}
 
         {/* Fun journaling tips */}
-        <div className="card bg-gradient-to-br from-accent-50 to-purple-50 border-accent-200">
+        <div className="card bg-primary-50 border-primary-200">
           <h3 className="font-medium text-text-primary mb-3">Journaling Tips</h3>
           <ul className="text-sm text-text-secondary space-y-2">
             <li>• Write freely without judgment</li>

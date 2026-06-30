@@ -48,10 +48,6 @@ const Onboarding = () => {
 
   return (
     <div className="min-h-screen gradient-overlay px-4 py-12 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-lg mx-auto relative z-10">
         {/* Progress Indicator */}
         <div className="flex justify-center mb-12 fade-in">
@@ -65,7 +61,7 @@ const Onboarding = () => {
                     i < step 
                       ? 'bg-primary-600 ring-4 ring-primary-200' 
                       : i === step
-                      ? 'bg-primary-500 ring-8 ring-primary-200 animate-pulse'
+                      ? 'bg-primary-500 ring-8 ring-primary-200'
                       : 'bg-sage-300'
                   }`}></div>
                 </div>
@@ -84,14 +80,14 @@ const Onboarding = () => {
           <div className="space-y-8 slide-up">
             <div className="text-center space-y-6">
               {/* Logo */}
-              <div className="inline-flex items-center justify-center w-24 h-24 bg-gradient-to-br from-primary-400 to-mint-400 rounded-full shadow-spa-xl mb-6 float">
+              <div className="inline-flex items-center justify-center w-24 h-24 bg-primary-600 rounded-full shadow-spa-xl mb-6">
                 <Leaf className="w-12 h-12 text-white" strokeWidth={1.5} />
               </div>
               
               <div>
-                <h1 className="text-5xl font-serif font-bold text-sage-900 mb-4 tracking-tight">
+                <h1 className="text-5xl font-bold text-sage-900 mb-4 tracking-tight">
                   Welcome to
-                  <span className="block bg-gradient-to-r from-primary-600 to-mint-600 bg-clip-text text-transparent">
+                  <span className="block text-primary-600">
                     MoodFlow
                   </span>
                 </h1>
@@ -104,7 +100,7 @@ const Onboarding = () => {
             {/* Welcome Card */}
             <div className="card">
               <div className="space-y-6">
-                <div className="flex items-start gap-4 p-4 bg-gradient-to-r from-primary-50 to-mint-50 rounded-spa">
+                <div className="flex items-start gap-4 p-4 bg-primary-50 rounded-spa">
                   <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
                     <Lock className="w-5 h-5 text-white" />
                   </div>
@@ -138,10 +134,10 @@ const Onboarding = () => {
         {step === 2 && (
           <div className="space-y-8 slide-up">
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-mint-400 to-primary-400 rounded-full shadow-spa-lg mb-4">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-lg mb-4">
                 <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
               </div>
-              <h2 className="text-4xl font-serif font-bold text-sage-900 tracking-tight">
+              <h2 className="text-4xl font-bold text-sage-900 tracking-tight">
                 What you can do
               </h2>
               <p className="text-lg text-sage-600 max-w-md mx-auto">
@@ -178,7 +174,7 @@ const Onboarding = () => {
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 w-14 h-14 bg-gradient-to-br from-primary-100 to-mint-100 rounded-spa flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <div className="flex-shrink-0 w-14 h-14 bg-primary-100 rounded-spa flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                       <item.Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
                     </div>
                     <div className="flex-1">
@@ -196,10 +192,10 @@ const Onboarding = () => {
         {step === 3 && (
           <div className="space-y-8 slide-up">
             <div className="text-center space-y-4">
-              <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-lg mb-4">
+              <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-lg mb-4">
                 <Bell className="w-10 h-10 text-white" strokeWidth={1.5} />
               </div>
-              <h2 className="text-4xl font-serif font-bold text-sage-900 tracking-tight">
+              <h2 className="text-4xl font-bold text-sage-900 tracking-tight">
                 Set things up
               </h2>
               <p className="text-lg text-sage-600 max-w-md mx-auto">
@@ -225,7 +221,7 @@ const Onboarding = () => {
                 </div>
 
                 {/* Notifications Toggle */}
-                <div className="p-5 bg-gradient-to-br from-primary-50 to-mint-50 rounded-spa border border-primary-200">
+                <div className="p-5 bg-primary-50 rounded-spa border border-primary-200">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">

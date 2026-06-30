@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -24,77 +24,53 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', Georgia, serif;
     font-weight: 600;
     letter-spacing: -0.02em;
   }
 }
 
 @layer components {
-  /* Spa-inspired Buttons */
   .btn-primary {
-    @apply bg-gradient-to-r from-primary-600 to-primary-500 hover:from-primary-700 hover:to-primary-600 text-white font-medium py-4 px-8 rounded-spa transition-all duration-300 shadow-spa hover:shadow-spa-lg border-0;
-  }
-  
-  .btn-primary:hover {
-    transform: translateY(-1px);
-  }
-  
-  .btn-secondary {
-    @apply bg-white hover:bg-sage-50 text-sage-800 font-medium py-4 px-8 rounded-spa border-2 border-sage-200 hover:border-primary-300 transition-all duration-300 shadow-spa;
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-4 px-8 rounded-spa transition-all duration-300 shadow-spa hover:shadow-spa-lg border-0;
   }
 
-  .btn-secondary:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.15);
+  .btn-secondary {
+    @apply bg-white hover:bg-sage-50 text-sage-800 font-medium py-4 px-8 rounded-spa border-2 border-sage-200 hover:border-primary-300 transition-all duration-300 shadow-spa;
   }
 
   .btn-danger {
     @apply bg-danger hover:bg-red-600 text-white font-medium py-4 px-8 rounded-spa transition-all duration-300 shadow-spa border-0;
   }
-  
-  /* Elegant Cards - Spa aesthetic */
+
   .card {
-    @apply bg-white/90 backdrop-blur-sm rounded-spa-lg shadow-spa border border-sage-100 p-6 transition-all duration-300;
+    @apply bg-white rounded-spa-lg shadow-spa border border-sage-100 p-6 transition-all duration-300;
   }
 
   .card:hover {
     @apply shadow-spa-lg;
-    transform: translateY(-2px);
   }
 
   .card-minimal {
-    @apply bg-white/80 backdrop-blur-sm rounded-spa border border-sage-100 p-5 shadow-sm;
+    @apply bg-white rounded-spa border border-sage-100 p-5 shadow-sm;
   }
-  
-  /* Elegant Input Fields */
+
   .input-field {
     @apply w-full px-5 py-4 border-2 border-sage-200 rounded-spa focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 outline-none transition-all duration-300 bg-white placeholder:text-sage-400 text-text-primary;
   }
 
-  .input-field:focus {
-    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.1);
-  }
-  
-  /* Wellness-themed mood selection */
   .mood-button {
-    @apply flex flex-col items-center justify-center p-5 rounded-spa border-2 border-sage-200 transition-all duration-300 cursor-pointer bg-white/90 backdrop-blur-sm hover:border-primary-400 hover:shadow-spa;
-  }
-  
-  .mood-button.active {
-    @apply border-primary-500 bg-gradient-to-br from-primary-50 to-mint-50 shadow-spa-lg;
+    @apply flex flex-col items-center justify-center p-5 rounded-spa border-2 border-sage-200 transition-all duration-300 cursor-pointer bg-white hover:border-primary-400 hover:shadow-spa;
   }
 
-  /* Elegant Typography */
-  .heading-spa {
-    @apply font-serif text-sage-900 tracking-tight;
+  .mood-button.active {
+    @apply border-primary-500 bg-primary-50 shadow-spa-lg;
   }
 
   .text-soft {
     @apply text-sage-600;
   }
 
-  /* Smooth Animations */
+  /* Simple fades only - no float/pulse motion */
   .fade-in {
     animation: fadeIn 0.6s ease-out;
   }
@@ -113,21 +89,10 @@
     to { opacity: 1; transform: translateY(0); }
   }
 
-  .float {
-    animation: float 3s ease-in-out infinite;
-  }
-
-  @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-  }
-
-  /* Crisis banner - calming but visible */
   .crisis-banner {
-    @apply bg-red-50/80 backdrop-blur-sm border-l-4 border-danger p-5 rounded-spa shadow-spa;
+    @apply bg-red-50 border-l-4 border-danger p-5 rounded-spa shadow-spa;
   }
 
-  /* Gradient overlays */
   .gradient-overlay {
     background: linear-gradient(135deg, rgba(240, 253, 244, 0.9) 0%, rgba(220, 252, 231, 0.8) 100%);
   }

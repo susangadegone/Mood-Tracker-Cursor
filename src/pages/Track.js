@@ -95,27 +95,23 @@ const Track = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-2xl mx-auto space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-mint-500 to-primary-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <Edit3 className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Track Your Mood</h1>
+          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Track Your Mood</h1>
           <p className="text-xl text-sage-600 font-light">How are you feeling right now?</p>
         </div>
 
         {/* Success Message */}
         {showSuccess && !showCrisisResources && (
-          <div className="card bg-gradient-to-br from-primary-50 to-mint-50 border-primary-300 text-center slide-up">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-lg mb-4">
+          <div className="card bg-primary-50 border-primary-300 text-center slide-up">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full shadow-spa-lg mb-4">
               <Check className="w-8 h-8 text-white" strokeWidth={2.5} />
             </div>
-            <h3 className="font-serif text-2xl font-semibold text-sage-900 mb-2">Mood logged</h3>
+            <h3 className="text-2xl font-semibold text-sage-900 mb-2">Mood logged</h3>
             <p className="text-sage-600">Your entry has been saved.</p>
           </div>
         )}
@@ -136,20 +132,20 @@ const Track = () => {
               <div className="flex flex-wrap gap-2">
                 <a 
                   href="tel:988" 
-                  className="inline-flex items-center space-x-2 bg-danger hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-modern transition-all duration-200"
+                  className="inline-flex items-center space-x-2 bg-danger hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-spa transition-all duration-200"
                 >
                   <Phone size={16} />
                   <span>Call 988 Now</span>
                 </a>
                 <a 
                   href="sms:988" 
-                  className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-danger border border-danger text-sm font-medium py-2 px-4 rounded-modern transition-all duration-200"
+                  className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-danger border border-danger text-sm font-medium py-2 px-4 rounded-spa transition-all duration-200"
                 >
                   <span>Text 988</span>
                 </a>
                 <button
                   onClick={() => navigate('/support')}
-                  className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-text-primary border border-border text-sm font-medium py-2 px-4 rounded-modern transition-all duration-200"
+                  className="inline-flex items-center space-x-2 bg-white hover:bg-gray-50 text-text-primary border border-border text-sm font-medium py-2 px-4 rounded-spa transition-all duration-200"
                 >
                   <span>View All Resources</span>
                 </button>
@@ -177,10 +173,10 @@ const Track = () => {
                   setSelectedQuadrant(key);
                   setSelectedEmotion(null);
                 }}
-                className={`p-4 rounded-modern border-2 transition-all duration-200 text-left ${
+                className={`p-4 rounded-spa border-2 transition-all duration-200 text-left ${
                   selectedQuadrant === key 
                     ? quad.color + ' border-opacity-100' 
-                    : 'bg-white border-border hover:border-accent-600'
+                    : 'bg-white border-border hover:border-primary-600'
                 }`}
               >
                 <p className="font-medium text-text-primary text-sm mb-2">{quad.label}</p>
@@ -205,10 +201,10 @@ const Track = () => {
                 <button
                   key={emotion}
                   onClick={() => setSelectedEmotion(emotion)}
-                  className={`px-4 py-2 rounded-modern font-medium transition-all duration-200 ${
+                  className={`px-4 py-2 rounded-spa font-medium transition-all duration-200 ${
                     selectedEmotion === emotion
-                      ? 'bg-accent-600 text-white'
-                      : 'bg-white border border-border text-text-primary hover:border-accent-600'
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-white border border-border text-text-primary hover:border-primary-600'
                   }`}
                 >
                   {emotion}
@@ -228,7 +224,7 @@ const Track = () => {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-sm font-medium text-text-primary">Intensity</label>
-                  <span className="text-sm font-semibold text-accent-600">{intensity}/10</span>
+                  <span className="text-sm font-semibold text-primary-600">{intensity}/10</span>
                 </div>
                 <input
                   type="range"
@@ -236,7 +232,7 @@ const Track = () => {
                   max="10"
                   value={intensity}
                   onChange={(e) => setIntensity(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-modern appearance-none cursor-pointer accent-accent-600"
+                  className="w-full h-2 bg-gray-200 rounded-spa appearance-none cursor-pointer accent-primary-600"
                 />
                 <div className="flex justify-between text-xs text-text-secondary mt-1">
                   <span>Mild</span>
@@ -248,7 +244,7 @@ const Track = () => {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-sm font-medium text-text-primary">Clarity</label>
-                  <span className="text-sm font-semibold text-accent-600">{clarity}/10</span>
+                  <span className="text-sm font-semibold text-primary-600">{clarity}/10</span>
                 </div>
                 <input
                   type="range"
@@ -256,7 +252,7 @@ const Track = () => {
                   max="10"
                   value={clarity}
                   onChange={(e) => setClarity(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-modern appearance-none cursor-pointer accent-accent-600"
+                  className="w-full h-2 bg-gray-200 rounded-spa appearance-none cursor-pointer accent-primary-600"
                 />
                 <div className="flex justify-between text-xs text-text-secondary mt-1">
                   <span>Confused</span>
@@ -268,7 +264,7 @@ const Track = () => {
               <div>
                 <div className="flex justify-between items-center mb-2">
                   <label className="text-sm font-medium text-text-primary">Control</label>
-                  <span className="text-sm font-semibold text-accent-600">{control}/10</span>
+                  <span className="text-sm font-semibold text-primary-600">{control}/10</span>
                 </div>
                 <input
                   type="range"
@@ -276,7 +272,7 @@ const Track = () => {
                   max="10"
                   value={control}
                   onChange={(e) => setControl(parseInt(e.target.value))}
-                  className="w-full h-2 bg-gray-200 rounded-modern appearance-none cursor-pointer accent-accent-600"
+                  className="w-full h-2 bg-gray-200 rounded-spa appearance-none cursor-pointer accent-primary-600"
                 />
                 <div className="flex justify-between text-xs text-text-secondary mt-1">
                   <span>Overwhelming</span>
@@ -299,10 +295,10 @@ const Track = () => {
                   key={tag.id}
                   onClick={() => toggleTag(tag.id)}
                   disabled={!selectedTags.includes(tag.id) && selectedTags.length >= 3}
-                  className={`px-4 py-2 rounded-modern font-medium transition-all duration-200 flex items-center space-x-2 ${
+                  className={`px-4 py-2 rounded-spa font-medium transition-all duration-200 flex items-center space-x-2 ${
                     selectedTags.includes(tag.id)
-                      ? 'bg-accent-600 text-white'
-                      : 'bg-white border border-border text-text-primary hover:border-accent-600 disabled:opacity-50 disabled:cursor-not-allowed'
+                      ? 'bg-primary-600 text-white'
+                      : 'bg-white border border-border text-text-primary hover:border-primary-600 disabled:opacity-50 disabled:cursor-not-allowed'
                   }`}
                 >
                   <tag.Icon size={16} />

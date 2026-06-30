@@ -66,7 +66,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ['Inter', 'SF Pro Display', 'Helvetica Neue', 'system-ui', 'sans-serif'],
-        serif: ['Playfair Display', 'Georgia', 'serif'],
       },
       borderRadius: {
         'spa': '16px',
