@@ -78,11 +78,6 @@ const Sanctuary = () => {
     return cat ? cat.name : catId;
   };
 
-  const getCategoryIcon = (catId) => {
-    const cat = library.categories.find(c => c.id === catId);
-    return cat ? cat.icon : '🎵';
-  };
-
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
       {/* Decorative Elements */}
@@ -130,7 +125,7 @@ const Sanctuary = () => {
                   : 'bg-white border-2 border-sage-200 text-sage-600 hover:bg-sage-50'
               }`}
             >
-              {cat.icon} {cat.name}
+              {cat.name}
             </button>
           ))}
         </div>
@@ -166,7 +161,7 @@ const Sanctuary = () => {
                   </div>
                   <div className="absolute top-2 right-2">
                     <span className="text-xs bg-black bg-opacity-75 text-white px-2 py-1 rounded">
-                      {getCategoryIcon(video.category)}
+                      {getCategoryName(video.category)}
                     </span>
                   </div>
                 </div>
@@ -231,7 +226,7 @@ const Sanctuary = () => {
                   >
                     {library.categories.map((cat) => (
                       <option key={cat.id} value={cat.id}>
-                        {cat.icon} {cat.name}
+                        {cat.name}
                       </option>
                     ))}
                   </select>

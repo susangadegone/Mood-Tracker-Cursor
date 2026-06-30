@@ -261,7 +261,7 @@ const Notes = () => {
         {/* Quick Note Tips */}
         {notes.length > 0 && (
           <div className="bg-yellow-50 border border-yellow-200 rounded-xl p-4">
-            <h3 className="font-medium text-yellow-800 mb-2">💡 Note-taking Tips</h3>
+            <h3 className="font-medium text-yellow-800 mb-2">Note-taking tips</h3>
             <ul className="text-sm text-yellow-700 space-y-1">
               <li>• Use tags to organize your thoughts</li>
               <li>• Write down ideas as soon as they come</li>

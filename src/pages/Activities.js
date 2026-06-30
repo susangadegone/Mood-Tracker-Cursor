@@ -246,7 +246,7 @@ const Activities = () => {
         {/* Context-specific tips */}
         {activeTab === 'recommended' ? (
           <div className="card bg-gradient-to-br from-primary-50 to-mint-50 border-primary-200">
-            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">✨ Recommended for Your Wellness</h3>
+            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">Recommended for you</h3>
             <ul className="text-sm text-sage-600 space-y-2 leading-relaxed">
               <li>• These activities help reduce stress and anxiety</li>
               <li>• Practice regularly for best results</li>
@@ -256,7 +256,7 @@ const Activities = () => {
           </div>
         ) : (
           <div className="card bg-gradient-to-br from-mint-50 to-primary-50 border-mint-200">
-            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">🎮 Puzzle Library Tips</h3>
+            <h3 className="font-serif text-xl font-semibold text-sage-900 mb-3">Puzzle tips</h3>
             <ul className="text-sm text-sage-600 space-y-2 leading-relaxed">
               <li>• Games help distract from anxious thoughts</li>
               <li>• Take your time - there's no rush</li>
@@ -355,7 +355,7 @@ const JournalPromptActivity = ({ prompt }) => {
         />
         
         <div className="mt-4 text-sm text-gray-500">
-          <p>💡 There are no right or wrong answers. Write whatever comes to mind.</p>
+          <p>There are no right or wrong answers. Write whatever comes to mind.</p>
         </div>
       </div>
     </div>
@@ -429,13 +429,13 @@ const HangmanGame = ({ word }) => {
 
         {isGameWon() && (
           <div className="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-green-800">🎉 Congratulations! You guessed it!</p>
+            <p className="text-green-800">Congratulations! You guessed it!</p>
           </div>
         )}
 
         {isGameLost() && (
           <div className="mb-4 p-3 bg-red-50 border border-red-200 rounded-lg">
-            <p className="text-red-800">😔 Game over! The word was: <strong>{word.word}</strong></p>
+            <p className="text-red-800">Game over. The word was: <strong>{word.word}</strong></p>
           </div>
         )}
 
@@ -718,7 +718,7 @@ const BreathingActivity = () => {
 
         {cycle >= 5 && (
           <div className="mt-4 p-3 bg-green-50 border border-green-200 rounded-lg">
-            <p className="text-green-800">🎉 Great job! You've completed 5 breathing cycles.</p>
+            <p className="text-green-800">Great job. You've completed 5 breathing cycles.</p>
           </div>
         )}
       </div>

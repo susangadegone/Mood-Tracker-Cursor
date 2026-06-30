@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, MessageCircle, ExternalLink, Plus, Trash2, X, Heart, Shield, Users } from 'lucide-react';
+import { Phone, MessageCircle, ExternalLink, Plus, Trash2, X, Heart, Shield, Users, Wind, Sprout, FileText } from 'lucide-react';
 import { getSupportContacts, saveSupportContact, deleteSupportContact } from '../utils/storage';
 
 const Support = () => {
@@ -79,18 +79,18 @@ const Support = () => {
   ];
 
   const onlineResources = [
-    { name: 'BetterHelp', url: 'https://www.betterhelp.com', description: 'Online therapy platform', icon: '💻' },
-    { name: '7 Cups', url: 'https://www.7cups.com', description: 'Free emotional support', icon: '☕' },
-    { name: 'NAMI', url: 'https://www.nami.org', description: 'Mental health education and advocacy', icon: '📚' },
-    { name: 'MentalHealth.gov', url: 'https://www.mentalhealth.gov', description: 'Resources and information', icon: '🏛️' },
-    { name: 'Psychology Today', url: 'https://www.psychologytoday.com/us/therapists', description: 'Find a therapist', icon: '🔍' },
+    { name: 'BetterHelp', url: 'https://www.betterhelp.com', description: 'Online therapy platform' },
+    { name: '7 Cups', url: 'https://www.7cups.com', description: 'Free emotional support' },
+    { name: 'NAMI', url: 'https://www.nami.org', description: 'Mental health education and advocacy' },
+    { name: 'MentalHealth.gov', url: 'https://www.mentalhealth.gov', description: 'Resources and information' },
+    { name: 'Psychology Today', url: 'https://www.psychologytoday.com/us/therapists', description: 'Find a therapist' },
   ];
 
   const selfHelpTools = [
-    { name: 'Breathing Exercises', description: '4-4-4 technique and more', icon: '🫁' },
-    { name: 'Grounding Techniques', description: '5-4-3-2-1 method', icon: '🌱' },
-    { name: 'Journaling Prompts', description: 'Express your thoughts', icon: '📝' },
-    { name: 'Safety Plan Builder', description: 'Create your personal safety plan', icon: '🛡️' },
+    { name: 'Breathing Exercises', description: '4-4-4 technique and more', Icon: Wind },
+    { name: 'Grounding Techniques', description: '5-4-3-2-1 method', Icon: Sprout },
+    { name: 'Journaling Prompts', description: 'Express your thoughts', Icon: FileText },
+    { name: 'Safety Plan Builder', description: 'Create your personal safety plan', Icon: Shield },
   ];
 
   return (
@@ -244,10 +244,7 @@ const Support = () => {
               <div key={index} className="card">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
-                    <h3 className="font-semibold text-text-primary mb-1 flex items-center space-x-2">
-                      <span>{resource.icon}</span>
-                      <span>{resource.name}</span>
-                    </h3>
+                    <h3 className="font-semibold text-text-primary mb-1">{resource.name}</h3>
                     <p className="text-sm text-text-secondary mb-3">{resource.description}</p>
                     <a 
                       href={resource.url} 
@@ -271,7 +268,9 @@ const Support = () => {
             {selfHelpTools.map((tool, index) => (
               <button key={index} className="card w-full text-left hover:shadow-modern-hover transition-all duration-200">
                 <div className="flex items-center space-x-4">
-                  <div className="text-3xl">{tool.icon}</div>
+                  <div className="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-spa flex items-center justify-center">
+                    <tool.Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
+                  </div>
                   <div className="flex-1">
                     <h3 className="font-semibold text-text-primary mb-1">{tool.name}</h3>
                     <p className="text-sm text-text-secondary">{tool.description}</p>
