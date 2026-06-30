@@ -104,17 +104,13 @@ const Insights = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 left-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-4xl mx-auto space-y-8 relative z-10">
         {/* Header */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <TrendingUp className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Insights</h1>
+          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Insights</h1>
           <p className="text-xl text-sage-600 font-light">Your mood patterns over time</p>
         </div>
 
@@ -130,7 +126,7 @@ const Insights = () => {
               onClick={() => setTimeRange(range.id)}
               className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
                 timeRange === range.id
-                  ? 'bg-gradient-to-r from-primary-600 to-mint-600 text-white shadow-spa'
+                  ? 'bg-primary-600 text-white shadow-spa'
                   : 'bg-white text-sage-600 hover:bg-sage-50 border-2 border-sage-200'
               }`}
             >
@@ -150,7 +146,7 @@ const Insights = () => {
             {/* Stats Overview */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
               <div className="card text-center">
-                <Calendar className="w-8 h-8 text-accent-600 mx-auto mb-2" />
+                <Calendar className="w-8 h-8 text-primary-600 mx-auto mb-2" />
                 <p className="text-3xl font-semibold text-text-primary">{getFilteredEntries().length}</p>
                 <p className="text-sm text-text-secondary">Check-ins</p>
               </div>
@@ -174,11 +170,11 @@ const Insights = () => {
                   <div>
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm text-text-secondary">Intensity</span>
-                      <span className="text-sm font-semibold text-accent-600">{averages.intensity}/10</span>
+                      <span className="text-sm font-semibold text-primary-600">{averages.intensity}/10</span>
                     </div>
                     <div className="h-2 bg-gray-200 rounded-full overflow-hidden">
                       <div 
-                        className="h-full bg-accent-600 rounded-full transition-all duration-500"
+                        className="h-full bg-primary-600 rounded-full transition-all duration-500"
                         style={{ width: `${(averages.intensity / 10) * 100}%` }}
                       />
                     </div>
@@ -262,13 +258,13 @@ const Insights = () => {
                   {topTags.map((tag, index) => (
                     <div key={tag.name} className="flex items-center justify-between">
                       <div className="flex items-center space-x-3">
-                        <span className="text-2xl font-semibold text-accent-600">#{index + 1}</span>
+                        <span className="text-2xl font-semibold text-primary-600">#{index + 1}</span>
                         <span className="font-medium text-text-primary capitalize">{tag.name}</span>
                       </div>
                       <div className="flex items-center space-x-2">
                         <div className="h-2 w-24 bg-gray-200 rounded-full overflow-hidden">
                           <div 
-                            className="h-full bg-accent-600 rounded-full"
+                            className="h-full bg-primary-600 rounded-full"
                             style={{ width: `${(tag.count / getFilteredEntries().length) * 100}%` }}
                           />
                         </div>

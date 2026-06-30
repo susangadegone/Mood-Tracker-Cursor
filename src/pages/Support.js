@@ -95,17 +95,13 @@ const Support = () => {
 
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
-      {/* Decorative Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
-      
       <div className="max-w-3xl mx-auto space-y-8 relative z-10">
         {/* Header with Quick Exit */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <Heart className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-4xl font-serif font-bold text-sage-900 mb-3 tracking-tight">Support & Resources</h1>
+          <h1 className="text-4xl font-bold text-sage-900 mb-3 tracking-tight">Support & Resources</h1>
           <p className="text-xl text-sage-600 font-light mb-4">You're not alone</p>
           <button
             onClick={() => setShowQuickExit(true)}
@@ -122,7 +118,7 @@ const Support = () => {
             <div className="flex-1">
               <h2 className="font-semibold text-danger mb-2">Crisis Support - Available 24/7</h2>
               <div className="space-y-3">
-                <div className="bg-white rounded-modern p-3">
+                <div className="bg-white rounded-spa p-3">
                   <p className="font-medium text-text-primary mb-2">988 - Suicide & Crisis Lifeline</p>
                   <div className="flex flex-wrap gap-2">
                     <a href="tel:988" className="btn-danger text-xs py-2 px-4 inline-flex items-center space-x-1">
@@ -144,7 +140,7 @@ const Support = () => {
                     </a>
                   </div>
                 </div>
-                <div className="bg-white rounded-modern p-3">
+                <div className="bg-white rounded-spa p-3">
                   <p className="font-medium text-text-primary mb-2">Crisis Text Line: Text HOME to 741741</p>
                   <a href="sms:741741?body=HOME" className="btn-danger text-xs py-2 px-4 inline-flex items-center space-x-1">
                     <MessageCircle size={14} />
@@ -168,10 +164,10 @@ const Support = () => {
             <button
               key={id}
               onClick={() => setActiveTab(id)}
-              className={`px-4 py-2 rounded-modern text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
+              className={`px-4 py-2 rounded-spa text-sm font-medium transition-all duration-200 flex items-center space-x-2 ${
                 activeTab === id
-                  ? 'bg-accent-600 text-white'
-                  : 'bg-white border border-border text-text-primary hover:border-accent-600'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-white border border-border text-text-primary hover:border-primary-600'
               }`}
             >
               <Icon size={16} />
@@ -266,7 +262,7 @@ const Support = () => {
           <div className="space-y-4">
             <p className="text-text-secondary">Self-help tools and techniques:</p>
             {selfHelpTools.map((tool, index) => (
-              <button key={index} className="card w-full text-left hover:shadow-modern-hover transition-all duration-200">
+              <button key={index} className="card w-full text-left hover:shadow-spa-lg transition-all duration-200">
                 <div className="flex items-center space-x-4">
                   <div className="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-spa flex items-center justify-center">
                     <tool.Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
@@ -336,7 +332,7 @@ const Support = () => {
                     <p className="text-xs text-text-secondary mt-2">Available: {contact.available}</p>
                   )}
                   {contact.notes && (
-                    <p className="text-sm text-text-primary mt-2 p-2 bg-gray-50 rounded-modern">{contact.notes}</p>
+                    <p className="text-sm text-text-primary mt-2 p-2 bg-gray-50 rounded-spa">{contact.notes}</p>
                   )}
                 </div>
               ))
@@ -347,7 +343,7 @@ const Support = () => {
         {/* Add Contact Modal */}
         {showAddContact && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-surface rounded-modern-lg p-6 max-w-md w-full">
+            <div className="bg-surface rounded-spa-lg p-6 max-w-md w-full">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-semibold text-text-primary">Add Personal Contact</h2>
                 <button onClick={() => setShowAddContact(false)} className="text-text-secondary hover:text-text-primary">
@@ -429,7 +425,7 @@ const Support = () => {
         {/* Quick Exit Confirmation */}
         {showQuickExit && (
           <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
-            <div className="bg-surface rounded-modern-lg p-6 max-w-sm w-full">
+            <div className="bg-surface rounded-spa-lg p-6 max-w-sm w-full">
               <h2 className="text-xl font-semibold text-text-primary mb-4">Quick Exit</h2>
               <p className="text-text-secondary mb-6">
                 This will immediately redirect you to Weather.com and clear this screen.

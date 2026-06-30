@@ -53,32 +53,32 @@ const Home = () => {
   const todaysMood = getTodaysMood();
 
   const quickActions = [
-    { 
-      title: 'Track Mood', 
+    {
+      title: 'Track Mood',
       description: 'Log your feelings',
-      icon: Edit3, 
-      gradient: 'from-primary-500 to-mint-500',
+      icon: Edit3,
+      bg: 'bg-primary-600',
       path: '/track'
     },
-    { 
-      title: 'View Insights', 
+    {
+      title: 'View Insights',
       description: 'See your patterns',
-      icon: TrendingUp, 
-      gradient: 'from-mint-500 to-primary-400',
+      icon: TrendingUp,
+      bg: 'bg-mint-600',
       path: '/insights'
     },
-    { 
-      title: 'Sanctuary', 
+    {
+      title: 'Sanctuary',
       description: 'Comfort content',
-      icon: Music, 
-      gradient: 'from-primary-400 to-sage-500',
+      icon: Music,
+      bg: 'bg-sage-600',
       path: '/sanctuary'
     },
-    { 
-      title: 'Support', 
+    {
+      title: 'Support',
       description: 'Get resources',
-      icon: Heart, 
-      gradient: 'from-sage-500 to-primary-500',
+      icon: Heart,
+      bg: 'bg-primary-700',
       path: '/support'
     },
   ];
@@ -86,23 +86,21 @@ const Home = () => {
   return (
     <div className="min-h-screen px-4 py-8 pb-28 relative overflow-hidden">
       {/* Decorative Background Elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl translate-x-1/2 -translate-y-1/2"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-mint-200/20 rounded-full blur-3xl -translate-x-1/2 translate-y-1/2"></div>
       
       <div className="max-w-2xl mx-auto space-y-8 relative z-10">
         {/* Welcome Header */}
         <div className="text-center fade-in">
-          <div className="inline-flex items-center justify-center w-20 h-20 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa-xl mb-6 float">
+          <div className="inline-flex items-center justify-center w-20 h-20 bg-primary-600 rounded-full shadow-spa-xl mb-6">
             <Leaf className="w-10 h-10 text-white" strokeWidth={1.5} />
           </div>
-          <h1 className="text-5xl font-serif font-bold text-sage-900 mb-3 tracking-tight">
+          <h1 className="text-5xl font-bold text-sage-900 mb-3 tracking-tight">
             {getGreeting()}{userData?.name && userData.name !== 'Friend' ? `, ${userData.name}` : ''}
           </h1>
           <p className="text-xl text-sage-600 font-light">How are you feeling today?</p>
         </div>
 
         {/* Crisis Resources - Elegant Banner */}
-        <div className="card border-red-200 bg-gradient-to-br from-red-50/80 to-rose-50/80 backdrop-blur-sm">
+        <div className="card border-red-200 bg-red-50">
           <div className="flex items-start gap-4">
             <div className="flex-shrink-0 w-12 h-12 bg-danger rounded-full flex items-center justify-center shadow-spa">
               <AlertCircle className="w-6 h-6 text-white" />
@@ -141,7 +139,7 @@ const Home = () => {
           {todaysMood ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full flex items-center justify-center shadow-spa">
+                <div className="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center shadow-spa">
                   <Check className="w-7 h-7 text-white" strokeWidth={2.5} />
                 </div>
                 <div>
@@ -160,10 +158,10 @@ const Home = () => {
             </div>
           ) : (
             <div className="text-center py-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary-100 to-mint-100 rounded-full shadow-spa mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full shadow-spa mb-4">
                 <Edit3 className="w-8 h-8 text-primary-600" strokeWidth={1.5} />
               </div>
-              <h3 className="font-serif text-2xl font-semibold text-sage-900 mb-2">Ready to check in?</h3>
+              <h3 className="text-2xl font-semibold text-sage-900 mb-2">Ready to check in?</h3>
               <p className="text-sage-600 mb-6">Log how you're feeling right now</p>
               <button
                 onClick={() => navigate('/track')}
@@ -178,24 +176,24 @@ const Home = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 gap-4">
           <div className="card text-center group hover:border-primary-300">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-orange-400 to-red-400 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-orange-500 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
               <Flame className="w-7 h-7 text-white" />
             </div>
-            <p className="text-4xl font-serif font-bold text-sage-900 mb-1">{streak}</p>
+            <p className="text-4xl font-bold text-sage-900 mb-1">{streak}</p>
             <p className="text-sm text-sage-600">Day Streak</p>
           </div>
           <div className="card text-center group hover:border-primary-300">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br from-primary-500 to-mint-500 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-600 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
               <Calendar className="w-7 h-7 text-white" />
             </div>
-            <p className="text-4xl font-serif font-bold text-sage-900 mb-1">{moodEntries.length}</p>
+            <p className="text-4xl font-bold text-sage-900 mb-1">{moodEntries.length}</p>
             <p className="text-sm text-sage-600">Total Entries</p>
           </div>
         </div>
 
         {/* Quick Actions */}
         <div>
-          <h2 className="text-2xl font-serif font-bold text-sage-900 mb-6 text-center">Quick actions</h2>
+          <h2 className="text-2xl font-bold text-sage-900 mb-6 text-center">Quick actions</h2>
           <div className="grid grid-cols-2 gap-4">
             {quickActions.map((action, index) => {
               const Icon = action.icon;
@@ -206,7 +204,7 @@ const Home = () => {
                   className="card text-center group hover:border-primary-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${action.gradient} rounded-full shadow-spa mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-14 h-14 ${action.bg} rounded-full shadow-spa mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-semibold text-sage-900 mb-1">{action.title}</h3>
@@ -221,7 +219,7 @@ const Home = () => {
         {moodEntries.length > 0 && (
           <div>
             <div className="flex items-center justify-between mb-4">
-              <h2 className="text-2xl font-serif font-bold text-sage-900">Recent Check-ins</h2>
+              <h2 className="text-2xl font-bold text-sage-900">Recent Check-ins</h2>
               <button
                 onClick={() => navigate('/insights')}
                 className="text-sm text-primary-600 hover:text-primary-700 font-semibold transition-colors"
