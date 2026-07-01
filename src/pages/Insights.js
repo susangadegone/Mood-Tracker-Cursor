@@ -128,7 +128,7 @@ const Insights = () => {
               onClick={() => setTimeRange(range.id)}
               className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
                 timeRange === range.id
-                  ? 'bg-primary-600 text-white shadow-spa'
+                  ? 'bg-primary-600 text-white'
                   : 'bg-white text-sage-600 hover:bg-sage-50 border-2 border-sage-200'
               }`}
             >

@@ -104,7 +104,7 @@ const Home = () => {
         {/* Crisis Resources - Elegant Banner */}
         <div className="card border-red-200 bg-red-50">
           <div className="flex items-start gap-4">
-            <div className="flex-shrink-0 w-12 h-12 bg-danger rounded-full flex items-center justify-center shadow-spa">
+            <div className="flex-shrink-0 w-12 h-12 bg-danger rounded-full flex items-center justify-center">
               <AlertCircle className="w-6 h-6 text-white" />
             </div>
             <div className="flex-1">
@@ -113,7 +113,7 @@ const Home = () => {
               <div className="flex flex-wrap gap-2">
                 <a 
                   href="tel:988" 
-                  className="inline-flex items-center space-x-2 bg-danger hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-spa transition-all duration-300 shadow-spa"
+                  className="inline-flex items-center space-x-2 bg-danger hover:bg-red-600 text-white text-sm font-medium py-2 px-4 rounded-spa transition-colors duration-200"
                 >
                   <Phone size={16} />
                   <span>Call 988</span>
@@ -141,7 +141,7 @@ const Home = () => {
           {todaysMood ? (
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center shadow-spa">
+                <div className="w-14 h-14 bg-primary-600 rounded-full flex items-center justify-center">
                   <Check className="w-7 h-7 text-white" strokeWidth={2.5} />
                 </div>
                 <div>
@@ -160,7 +160,7 @@ const Home = () => {
             </div>
           ) : (
             <div className="text-center py-8">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full shadow-spa mb-4">
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-100 rounded-full mb-4">
                 <Edit3 className="w-8 h-8 text-primary-600" strokeWidth={1.5} />
               </div>
               <h3 className="text-2xl font-semibold text-sage-900 mb-2">Ready to check in?</h3>
@@ -178,14 +178,14 @@ const Home = () => {
         {/* Stats Grid */}
         <div className="grid grid-cols-2 gap-4">
           <div className="card text-center group hover:border-primary-300">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-orange-500 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-orange-500 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
               <Flame className="w-7 h-7 text-white" />
             </div>
             <p className="text-4xl font-bold text-sage-900 mb-1">{streak}</p>
             <p className="text-sm text-sage-600">Day Streak</p>
           </div>
           <div className="card text-center group hover:border-primary-300">
-            <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-600 rounded-full shadow-spa mb-3 group-hover:scale-110 transition-transform duration-300">
+            <div className="inline-flex items-center justify-center w-14 h-14 bg-primary-600 rounded-full mb-3 group-hover:scale-110 transition-transform duration-300">
               <Calendar className="w-7 h-7 text-white" />
             </div>
             <p className="text-4xl font-bold text-sage-900 mb-1">{moodEntries.length}</p>
@@ -206,7 +206,7 @@ const Home = () => {
                   className="card text-center group hover:border-primary-300"
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  <div className={`inline-flex items-center justify-center w-14 h-14 ${action.bg} rounded-full shadow-spa mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`inline-flex items-center justify-center w-14 h-14 ${action.bg} rounded-full mb-4 group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                   </div>
                   <h3 className="font-semibold text-sage-900 mb-1">{action.title}</h3>

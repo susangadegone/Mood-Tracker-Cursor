@@ -190,12 +190,12 @@ const Activities = () => {
         </div>
 
         {/* Tab Menu */}
-        <div className="flex gap-2 bg-white rounded-spa-lg p-1.5 shadow-spa border border-sage-200">
+        <div className="flex gap-2 bg-white rounded-spa-lg p-1.5 border border-sage-200">
           <button
             onClick={() => setActiveTab('recommended')}
             className={`flex-1 py-4 px-4 rounded-spa text-sm font-semibold transition-all duration-300 ${
               activeTab === 'recommended'
-                ? 'bg-primary-600 text-white shadow-spa'
+                ? 'bg-primary-600 text-white'
                 : 'text-sage-600 hover:text-sage-900 hover:bg-sage-50'
             }`}
           >
@@ -205,7 +205,7 @@ const Activities = () => {
             onClick={() => setActiveTab('puzzles')}
             className={`flex-1 py-4 px-4 rounded-spa text-sm font-semibold transition-all duration-300 ${
               activeTab === 'puzzles'
-                ? 'bg-primary-600 text-white shadow-spa'
+                ? 'bg-primary-600 text-white'
                 : 'text-sage-600 hover:text-sage-900 hover:bg-sage-50'
             }`}
           >
@@ -221,11 +221,11 @@ const Activities = () => {
               <button
                 key={activity.id}
                 onClick={() => setSelectedActivity(activity.id)}
-                className="w-full card hover:border-primary-300 hover:shadow-spa-lg transition-all duration-300 text-left group"
+                className="w-full card hover:border-primary-300 transition-colors duration-200 text-left group"
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="flex items-center space-x-4">
-                  <div className={`p-4 rounded-spa ${activity.color} group-hover:scale-110 transition-transform duration-300 shadow-spa`}>
+                  <div className={`p-4 rounded-spa ${activity.color} group-hover:scale-110 transition-transform duration-300`}>
                     <Icon size={28} className={activity.textColor} strokeWidth={1.5} />
                   </div>
                   <div className="flex-1">

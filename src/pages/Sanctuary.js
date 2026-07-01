@@ -95,7 +95,7 @@ const Sanctuary = () => {
         {/* Add Content Button */}
         <button
           onClick={() => setShowAddModal(true)}
-          className="w-full btn-primary flex items-center justify-center space-x-2 shadow-spa-lg"
+          className="w-full btn-primary flex items-center justify-center space-x-2"
         >
           <Plus size={20} />
           <span>Add Content</span>
@@ -107,8 +107,8 @@ const Sanctuary = () => {
             onClick={() => setFilterCategory('all')}
             className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
               filterCategory === 'all'
-                ? 'bg-primary-600 text-white shadow-spa'
-                : 'bg-white border-2 border-sage-200 text-sage-600 hover:bg-sage-50'
+                ? 'bg-primary-600 text-white'
+                : 'bg-white border border-sage-300 text-sage-600 hover:bg-sage-50'
             }`}
           >
             All
@@ -119,8 +119,8 @@ const Sanctuary = () => {
               onClick={() => setFilterCategory(cat.id)}
               className={`px-6 py-3 rounded-spa text-sm font-semibold transition-all duration-300 ${
                 filterCategory === cat.id
-                  ? 'bg-primary-600 text-white shadow-spa'
-                  : 'bg-white border-2 border-sage-200 text-sage-600 hover:bg-sage-50'
+                  ? 'bg-primary-600 text-white'
+                  : 'bg-white border border-sage-300 text-sage-600 hover:bg-sage-50'
               }`}
             >
               {cat.name}

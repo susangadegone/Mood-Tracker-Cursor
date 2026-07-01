@@ -109,7 +109,7 @@ const Support = () => {
           </div>
           <button
             onClick={() => setShowQuickExit(true)}
-            className="flex-shrink-0 px-4 py-2 bg-white hover:bg-sage-50 text-sage-700 text-sm font-semibold rounded-spa border-2 border-sage-300 transition-all duration-300 shadow-spa"
+            className="flex-shrink-0 px-4 py-2 bg-white hover:bg-sage-50 text-sage-700 text-sm font-semibold rounded-spa border border-sage-300 transition-colors duration-200"
           >
             Quick Exit
           </button>
@@ -266,11 +266,9 @@ const Support = () => {
           <div className="space-y-4">
             <p className="text-text-secondary">Self-help tools and techniques:</p>
             {selfHelpTools.map((tool, index) => (
-              <button key={index} className="card w-full text-left hover:shadow-spa-lg transition-all duration-200">
+              <button key={index} className="card w-full text-left hover:border-primary-300 transition-colors duration-200">
                 <div className="flex items-center space-x-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-primary-50 rounded-spa flex items-center justify-center">
-                    <tool.Icon className="w-6 h-6 text-primary-600" strokeWidth={1.5} />
-                  </div>
+                  <tool.Icon className="w-6 h-6 text-primary-600 flex-shrink-0" strokeWidth={1.75} />
                   <div className="flex-1">
                     <h3 className="font-semibold text-text-primary mb-1">{tool.name}</h3>
                     <p className="text-sm text-text-secondary">{tool.description}</p>
