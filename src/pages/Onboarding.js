@@ -94,34 +94,30 @@ const Onboarding = () => {
               </div>
             </div>
 
-            {/* Welcome Card */}
-            <div className="card">
-              <div className="space-y-6">
-                <div className="flex items-start gap-4 p-4 bg-primary-50 rounded-spa">
-                  <div className="flex-shrink-0 w-10 h-10 bg-primary-500 rounded-full flex items-center justify-center">
-                    <Lock className="w-5 h-5 text-white" />
-                  </div>
-                  <div>
-                    <h3 className="font-semibold text-sage-900 mb-1">Private by design</h3>
-                    <p className="text-sm text-sage-600 leading-relaxed">
-                      Everything you log stays on your device. No account, no servers.
-                    </p>
-                  </div>
-                </div>
+            {/* Welcome details */}
+            <div className="space-y-5">
+              <div className="flex items-start gap-3">
+                <Lock className="w-5 h-5 text-primary-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
+                <p className="text-sm text-sage-700 leading-relaxed">
+                  <span className="font-semibold text-sage-900">Private by design. </span>
+                  Everything you log stays on your device - no account, no servers.
+                </p>
+              </div>
 
-                <div className="grid grid-cols-2 gap-4">
-                  {[
-                    { Icon: Edit3, label: 'Daily check-ins' },
-                    { Icon: TrendingUp, label: 'Mood patterns' },
-                    { Icon: Heart, label: 'Crisis support' },
-                    { Icon: Lock, label: 'Private & local' },
-                  ].map(({ Icon, label }) => (
-                    <div key={label} className="text-center p-4 bg-white rounded-spa border border-sage-100">
-                      <Icon className="w-6 h-6 text-primary-600 mx-auto mb-2" strokeWidth={1.5} />
-                      <p className="text-xs text-sage-600 font-medium">{label}</p>
-                    </div>
-                  ))}
-                </div>
+              <div className="h-px bg-sage-200" />
+
+              <div className="grid grid-cols-2 gap-x-4 gap-y-3">
+                {[
+                  { Icon: Edit3, label: 'Daily check-ins' },
+                  { Icon: TrendingUp, label: 'Mood patterns' },
+                  { Icon: Heart, label: 'Crisis support' },
+                  { Icon: Lock, label: 'Private & local' },
+                ].map(({ Icon, label }) => (
+                  <div key={label} className="flex items-center gap-2">
+                    <Icon className="w-4 h-4 text-primary-600 flex-shrink-0" strokeWidth={2} />
+                    <p className="text-sm text-sage-700">{label}</p>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
@@ -212,7 +208,7 @@ const Onboarding = () => {
                 </div>
 
                 {/* Notifications Toggle */}
-                <div className="p-5 bg-primary-50 rounded-spa border border-primary-200">
+                <div className="pt-6 border-t border-sage-200">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-2 mb-1">
@@ -234,7 +230,7 @@ const Onboarding = () => {
 
                   {/* Time Picker (only if notifications enabled) */}
                   {formData.notifications && (
-                    <div className="pt-4 border-t border-primary-200">
+                    <div className="pt-4">
                       <label className="block text-sm font-medium text-sage-800 mb-2">
                         Preferred check-in time
                       </label>
@@ -248,11 +244,9 @@ const Onboarding = () => {
                   )}
                 </div>
 
-                <div className="p-4 bg-sage-50 rounded-spa border border-sage-200">
-                  <p className="text-sm text-sage-700 text-center">
-                    <span className="font-medium">Privacy first:</span> all your data is stored only on your device
-                  </p>
-                </div>
+                <p className="text-sm text-sage-500 pt-4 border-t border-sage-200">
+                  <span className="font-medium text-sage-700">Privacy first:</span> all your data is stored only on your device.
+                </p>
               </div>
             </div>
           </div>

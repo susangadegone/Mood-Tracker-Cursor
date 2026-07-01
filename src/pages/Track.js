@@ -110,7 +110,7 @@ const Track = () => {
         {/* Success Message */}
         {showSuccess && !showCrisisResources && (
           <div className="card bg-primary-50 border-primary-300 text-center slide-up">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full shadow-spa-lg mb-4">
+            <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-4">
               <Check className="w-8 h-8 text-white" strokeWidth={2.5} />
             </div>
             <h3 className="text-2xl font-semibold text-sage-900 mb-2">Mood logged</h3>

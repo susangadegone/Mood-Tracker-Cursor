@@ -31,39 +31,36 @@
 
 @layer components {
   .btn-primary {
-    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-4 px-8 rounded-spa transition-all duration-300 shadow-spa hover:shadow-spa-lg border-0;
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-4 px-8 rounded-spa transition-colors duration-200 border-0;
   }
 
   .btn-secondary {
-    @apply bg-white hover:bg-sage-50 text-sage-800 font-medium py-4 px-8 rounded-spa border-2 border-sage-200 hover:border-primary-300 transition-all duration-300 shadow-spa;
+    @apply bg-white hover:bg-sage-50 text-sage-800 font-medium py-4 px-8 rounded-spa border border-sage-300 hover:border-primary-300 transition-colors duration-200;
   }
 
   .btn-danger {
-    @apply bg-danger hover:bg-red-600 text-white font-medium py-4 px-8 rounded-spa transition-all duration-300 shadow-spa border-0;
+    @apply bg-danger hover:bg-red-600 text-white font-medium py-4 px-8 rounded-spa transition-colors duration-200 border-0;
   }
 
+  /* One visual treatment per surface: a hairline border, no default shadow */
   .card {
-    @apply bg-white rounded-spa-lg shadow-spa border border-sage-100 p-6 transition-all duration-300;
-  }
-
-  .card:hover {
-    @apply shadow-spa-lg;
+    @apply bg-white rounded-spa border border-sage-200 p-6 transition-colors duration-200;
   }
 
   .card-minimal {
-    @apply bg-white rounded-spa border border-sage-100 p-5 shadow-sm;
+    @apply bg-white rounded-spa border border-sage-200 p-5;
   }
 
   .input-field {
-    @apply w-full px-5 py-4 border-2 border-sage-200 rounded-spa focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 outline-none transition-all duration-300 bg-white placeholder:text-sage-400 text-text-primary;
+    @apply w-full px-5 py-4 border border-sage-300 rounded-spa focus:ring-2 focus:ring-primary-400/30 focus:border-primary-400 outline-none transition-colors duration-200 bg-white placeholder:text-sage-400 text-text-primary;
   }
 
   .mood-button {
-    @apply flex flex-col items-center justify-center p-5 rounded-spa border-2 border-sage-200 transition-all duration-300 cursor-pointer bg-white hover:border-primary-400 hover:shadow-spa;
+    @apply flex flex-col items-center justify-center p-5 rounded-spa border border-sage-300 transition-colors duration-200 cursor-pointer bg-white hover:border-primary-400;
   }
 
   .mood-button.active {
-    @apply border-primary-500 bg-primary-50 shadow-spa-lg;
+    @apply border-primary-500 bg-primary-50;
   }
 
   .text-soft {
@@ -90,7 +87,7 @@
   }
 
   .crisis-banner {
-    @apply bg-red-50 border-l-4 border-danger p-5 rounded-spa shadow-spa;
+    @apply bg-red-50 border-l-4 border-danger p-5 rounded-spa;
   }
 
   .gradient-overlay {
