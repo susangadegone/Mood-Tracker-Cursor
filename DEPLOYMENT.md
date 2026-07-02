@@ -1,55 +1,48 @@
-# Mood Tracker - Deployment Guide
+# Deployment Guide
 
-## 🌐 Live Deployment (GitHub Pages)
+## Live deployment
 
-**Primary URL:** https://susangadegone.github.io/Mood-Tracker-Cursor/
+Production is hosted on [Vercel](https://vercel.com), connected directly to this GitHub
+repository.
 
-## 🚀 How to Deploy Updates
+**Production URL:** https://mood-tracker-cursor.vercel.app
 
-### Deploy to GitHub Pages:
-```bash
-npm run deploy
-```
+## How deploys happen
 
-This command will:
-1. Build the production version (`npm run build`)
-2. Deploy to the `gh-pages` branch
-3. Update your live site automatically
+Deployment is automatic. Vercel's GitHub integration watches this repository:
 
-### Manual Git Push (for code changes):
-```bash
-git add -A
-git commit -m "Your commit message"
-git push origin main
-npm run deploy
-```
+- Every push to `main` builds and deploys to production.
+- Every push to any other branch (including pull request branches) gets its own preview
+  deployment at a unique `*.vercel.app` URL.
 
-## 📝 GitHub Pages Configuration
+There is no manual deploy step. Merging a pull request into `main` is the deploy.
 
-Make sure GitHub Pages is configured in your repository settings:
-- Go to: `Settings` → `Pages`
-- **Source:** Deploy from a branch
-- **Branch:** `gh-pages` / `(root)`
+Build configuration (auto-detected as a Create React App project):
 
-## ⏱️ Deployment Time
-- Changes take **2-3 minutes** to appear on GitHub Pages after running `npm run deploy`
-- Always **hard refresh** (`Cmd+Shift+R` or `Ctrl+Shift+R`) after deployment
+- **Build command:** `npm run build`
+- **Output directory:** `build`
+- **Install command:** `npm install`
 
-## 🔧 Local Development
+## Local development
+
 ```bash
 npm start
 ```
-Runs on `http://localhost:3000`
 
-## 📦 Build Production Locally
+Runs the dev server at `http://localhost:3000`.
+
+## Build production locally
+
 ```bash
 npm run build
 ```
-Creates optimized production build in `/build` folder
 
-## 🎨 Current Design
-- **Aesthetic:** Spa/Wellness theme with green vibes
-- **Colors:** Sage, Mint, Primary green palette
-- **Typography:** Playfair Display (serif) + Inter (sans-serif)
-- **Inspired by:** BetterHelp + luxury spa websites
+Outputs an optimized production build to `build/`.
 
+## Checking a deployment
+
+If a deployment looks wrong, check the Vercel dashboard for the project (or the "Checks"
+tab on the relevant GitHub commit/PR) for build logs. A failed build there means the
+build command errored — check the log for the actual error rather than assuming the
+site is broken; the production alias only ever points at the most recent **successful**
+build on `main`, so an unrelated branch failing to build does not affect what's live.

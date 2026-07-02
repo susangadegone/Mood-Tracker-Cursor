@@ -49,8 +49,8 @@ portability. For a mental health tool I consider that the right default.
 ## Tech stack
 
 - **React 18** (Create React App / `react-scripts`)
-- **React Router 6** using `HashRouter`, so client-side routes work on static hosts like
-  GitHub Pages
+- **React Router 6** using `HashRouter`, so client-side routes resolve correctly without
+  any server-side rewrite rules
 - **Tailwind CSS 3** for styling
 - **Recharts** for the mood charts
 - **lucide-react** for icons
@@ -75,18 +75,17 @@ The dev server runs at [http://localhost:3000](http://localhost:3000) and reload
 | `npm start` | Run the development server |
 | `npm run build` | Produce an optimized production build in `build/` |
 | `npm test` | Run the test runner in watch mode |
-| `npm run deploy` | Build and publish `build/` to GitHub Pages via `gh-pages` |
 
 ## Deployment
 
 The app is a static bundle, so any static host works. `npm run build` outputs to `build/`;
 serve that directory as-is.
 
-This repo is configured for GitHub Pages. `homepage` in `package.json` points at the Pages
-URL, the router uses `HashRouter` so deep links resolve without server-side rewrites, and
-`npm run deploy` pushes the build to the `gh-pages` branch. For Netlify or Vercel, use a
-build command of `npm run build` and a publish directory of `build`. See
-[DEPLOYMENT.md](DEPLOYMENT.md) for details.
+Production is deployed on [Vercel](https://vercel.com), connected directly to this
+repository: every push to `main` triggers a build and deploy automatically, no manual
+deploy step required. Build command is `npm run build` (auto-detected for
+Create React App), output directory `build`. See [DEPLOYMENT.md](DEPLOYMENT.md) for
+details.
 
 ## Project structure
 
